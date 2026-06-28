@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-oxigenio-brasil"
+version = "0.1.0"
+description = "Pesquisa aberta Portuguese-first para LLMs brasileiros, dados, avaliacao e raciocinio."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [
+  { name = "Eduardo", email = "duhenri9@gmail.com" }
+]
+keywords = [
+  "llm",
+  "portugues-brasileiro",
+  "nlp",
+  "biodiversidade",
+  "avaliacao",
+  "open-science"
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.8"
+]
+
+[project.urls]
+Homepage = "https://github.com/duhenri9/llm-oxigenio-brasil"
+Repository = "https://github.com/duhenri9/llm-oxigenio-brasil"
+Issues = "https://github.com/duhenri9/llm-oxigenio-brasil/issues"
+Funding = "https://github.com/duhenri9/llm-oxigenio-brasil/blob/main/SUPPORT.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
