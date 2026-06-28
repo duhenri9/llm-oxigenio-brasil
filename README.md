@@ -10,6 +10,10 @@ O documento principal do projeto e:
 
 - [`docs/research_north_star.md`](docs/research_north_star.md)
 
+Para retomada tecnica por Tech Lead ou Dev Senior, leia tambem:
+
+- [`HANDOFF.md`](HANDOFF.md)
+
 ## Principios
 
 - Portugues brasileiro primeiro.
