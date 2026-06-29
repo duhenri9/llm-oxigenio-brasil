@@ -1,0 +1,50 @@
+# Landing Page V0
+
+Site estático da LP pública inicial do Oxigênio Brasil.
+
+## Design System
+
+Leia [`DESIGN_SYSTEM.md`](DESIGN_SYSTEM.md) antes de alterar layout, tokens,
+componentes ou direção visual da LP.
+
+## Escopo
+
+- apresenta a tese pública do projeto;
+- traduz a tese para visitantes que não conhecem IA, LLM ou open-source;
+- mostra domínios brasileiros críticos;
+- explica governança antes de treinamento;
+- resume compromissos públicos sobre fonte, benchmark, revisão e falhas;
+- direciona contribuições para GitHub;
+- inclui CTA institucional de apoio por modal acionado pelo usuário;
+- não coleta conversas;
+- não possui formulário próprio;
+- não possui login;
+- não usa contribuições automaticamente para treino.
+- não embute pagamento, PIX, tracking ou analytics.
+
+## Rodar Localmente
+
+Abrir `site/index.html` diretamente no navegador ou servir estaticamente:
+
+```bash
+python -m http.server 8000 --directory site
+```
+
+## Deploy
+
+O deploy canônico da LP v0 é Vercel, não GitHub Pages.
+
+Configuração esperada:
+
+- projeto Vercel: `oxigenio-brasil`;
+- repositório: `duhenri9/llm-oxigenio-brasil`;
+- branch de produção: `main`;
+- root directory: `site`;
+- framework preset: `Other`;
+- build command: vazio;
+- output directory: `.` ou vazio;
+- environment variables: nenhuma.
+
+Não conectar esta LP ao projeto Vercel do E-merge.ia e não criar banco,
+formulário, chat, upload, analytics, pagamento embutido ou variável de ambiente
+para a LP v0.

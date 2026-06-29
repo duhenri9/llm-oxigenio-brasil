@@ -408,3 +408,87 @@ filtros de PII. Ainda não deve iniciar treino, corpus grande ou publicação de
 
 A nomenclatura de modelo só deve ser usada publicamente quando houver artefato real,
 model card, eval card, licença e benchmark mínimo.
+
+## 16. Atualização -- Landing Page V0
+
+A LP pública inicial vive em `site/` como site estático, sem framework e sem
+dependências de runtime.
+
+Escopo:
+
+- apresentar o Oxigênio Brasil como iniciativa open-source, Portuguese-first;
+- comunicar domínios brasileiros críticos;
+- explicar governança antes de treinamento;
+- abrir contribuição futura por GitHub;
+- preparar deploy estático canônico pela Vercel, com root directory `site`.
+
+Design System v0.1:
+
+- documento: `site/DESIGN_SYSTEM.md`;
+- direção visual: Brazilian Research Interface;
+- componentes nomeados: Hero, StatusBand, DomainSpecimen, EvidencePanel,
+  TrustSystem, TimeContrast, ContributionNotice e RoadmapStep;
+- artefato visual proprietário: Sistema de confiança com fluxo
+  Fonte -> Licença -> Metadados -> Rejeição -> Avaliação -> Modelo;
+- cards de domínio tratados como specimens editoriais, não cards genéricos;
+- brand mark público usa `Ox`, não `O2`, `Oxi` ou `o2-zuca`.
+- CTA de apoio usa modal acionado por clique, sem popup automático, sem PIX direto,
+  sem sistema de pagamento embutido e sem promessa de acesso, prioridade ou
+  influência técnica.
+
+Fora do escopo:
+
+- conversa integrada;
+- coleta de prompts ou respostas;
+- formulário próprio;
+- login;
+- upload de arquivos;
+- uso automático de contribuições para treinamento;
+- pagamento embutido;
+- tracking ou analytics;
+- GitHub Pages como canal público concorrente.
+
+Deploy:
+
+- canal canônico: Vercel;
+- projeto Vercel sugerido: `oxigenio-brasil`;
+- repositório: `duhenri9/llm-oxigenio-brasil`;
+- branch de produção: `main`;
+- root directory: `site`;
+- framework preset: `Other`;
+- build command: vazio;
+- output directory: `.` ou vazio;
+- environment variables: nenhuma.
+
+Não usar o projeto Vercel do E-merge.ia para hospedar o Oxigênio Brasil.
+Não copiar variáveis de ambiente, domínio, banco, integrações ou configuração de
+produção do E-merge.ia para a LP do Oxigênio Brasil.
+
+## 17. Registro Operacional De Deploy
+
+| Projeto | Repo GitHub | Projeto Vercel | Root Directory | Framework | Branch produção | Domínio |
+| --- | --- | --- | --- | --- | --- | --- |
+| Oxigênio Brasil | `duhenri9/llm-oxigenio-brasil` | `oxigenio-brasil` | `site` | Other/static | `main` | URL Vercel primeiro |
+| E-merge.ia | `duhenri9/e-merge.ia-workspace` | `e-merge-ia` | `.` | Next.js | `main` | `emergeia.com.br` somente após validação |
+
+Regras:
+
+- não misturar repositórios;
+- não usar o mesmo projeto Vercel para os dois;
+- não copiar variáveis do E-merge.ia para o Oxigênio Brasil;
+- não anexar domínio real antes de validar preview;
+- não manter GitHub Pages e Vercel como canais públicos concorrentes sem decisão
+  explícita.
+
+A página deve manter o aviso público de que nenhuma contribuição será usada
+automaticamente para treinamento e que todo dado precisa passar por revisão,
+consentimento, metadados, filtros de qualidade e política de dados sensíveis.
+
+Conceito narrativo registrado:
+
+- `2026`: o Brasil real de hoje, com desafios concretos de informação,
+  biomas, cidadania, cultura e segurança digital;
+- `2051`: horizonte de 25 anos para imaginar informação confiável em português
+  como infraestrutura, sem prometer que o modelo resolverá esse futuro;
+- regra editorial: usar o contraste como reflexão, não como hype, promessa verde
+  ou claim de impacto.

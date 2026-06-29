@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Oxigênio Brasil é uma iniciativa open-source, Portuguese-first, para construir governança, dados, avaliação e modelos de linguagem voltados ao contexto brasileiro."
+    />
+    <title>Oxigênio Brasil - iniciativa open-source Portuguese-first</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Ir para o conteúdo</a>
+
+    <header class="site-header" aria-label="Navegação principal">
+      <a class="brand" href="#top" aria-label="Oxigênio Brasil">
+        <span class="brand-mark" aria-hidden="true">Ox</span>
+        <span>Oxigênio Brasil</span>
+      </a>
+      <nav class="nav-links" aria-label="Seções">
+        <a href="#metodo">Método</a>
+        <a href="#dominios">Domínios</a>
+        <a href="#contribuir">Contribuir</a>
+        <button class="nav-button" type="button" data-support-open>Apoiar</button>
+        <a href="https://github.com/duhenri9/llm-oxigenio-brasil">GitHub</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section id="top" class="hero" aria-labelledby="hero-title">
+        <canvas id="biome-canvas" aria-hidden="true"></canvas>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Interface brasileira de pesquisa</p>
+          <h1 id="hero-title">Oxigênio Brasil</h1>
+          <p class="hero-copy">
+            Uma iniciativa open-source, Portuguese-first, para construir uma
+            fundação auditável de pesquisa, avaliação e adaptação de modelos de
+            linguagem ao contexto brasileiro.
+          </p>
+          <p class="hero-simple">
+            Em termos simples: queremos preparar o terreno para que futuros modelos de IA
+            entendam melhor o português brasileiro, o Brasil real e seus riscos.
+          </p>
+          <div class="hero-artifact" aria-label="Contrato público da fase atual">
+            <span>sem modelo treinado</span>
+            <span>sem corpus aprovado</span>
+            <span>sem coleta automática</span>
+          </div>
+          <div class="hero-actions" aria-label="Ações principais">
+            <a class="button primary" href="#contribuir">Quero contribuir</a>
+            <a class="button secondary" href="https://github.com/duhenri9/llm-oxigenio-brasil">
+              Ver repositório
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="status-band" aria-label="Estado atual do projeto">
+        <div class="status-item">
+          <span class="status-label">Status</span>
+          <strong>pre-alpha</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Modelo treinado</span>
+          <strong>ainda não</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Corpus aprovado</span>
+          <strong>ainda não</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Governança</span>
+          <strong>em construção</strong>
+        </div>
+      </section>
+
+      <section id="metodo" class="section split">
+        <div>
+          <p class="eyebrow">Método antes de escala</p>
+          <h2>O projeto começa pela parte que normalmente fica invisível.</h2>
+        </div>
+        <div class="prose">
+          <p>
+            Antes de falar em treinamento, o Oxigênio Brasil organiza fontes,
+            licenças, metadados, rejeição de dados, avaliação PT-BR e segurança.
+            A ambição é grande, mas o caminho precisa ser auditável.
+          </p>
+          <p>
+            Portuguese-first significa começar pelo português brasileiro, e não adaptar
+            o Brasil como detalhe depois. Modelos de linguagem são sistemas de IA
+            capazes de ler, escrever, responder e raciocinar com texto.
+          </p>
+          <p>
+            A escolha de modelo aluno será definida por benchmark, custo, licença,
+            tooling e qualidade em PT-BR. Modelos externos poderão ser usados como
+            referência, judge ou baseline, sem decisão irreversível nesta fase.
+          </p>
+        </div>
+      </section>
+
+      <section id="dominios" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Brasil como critério de confiança</p>
+          <h2>Domínios brasileiros críticos</h2>
+        </div>
+        <div class="domain-grid">
+          <article class="domain-card">
+            <span class="domain-index">BR-D01</span>
+            <h3>Biomas, clima e biodiversidade</h3>
+            <p>Amazônia, Cerrado, Caatinga, Pantanal, Mata Atlântica, Pampa e litoral.</p>
+            <dl>
+              <div>
+                <dt>Critério</dt>
+                <dd>fonte verificável</dd>
+              </div>
+              <div>
+                <dt>Risco</dt>
+                <dd>alucinação ambiental</dd>
+              </div>
+            </dl>
+          </article>
+          <article class="domain-card">
+            <span class="domain-index">BR-D02</span>
+            <h3>Cidadania, Estado e direito público</h3>
+            <p>Orientação clara para serviços, direitos e fontes oficiais.</p>
+            <dl>
+              <div>
+                <dt>Critério</dt>
+                <dd>fonte oficial</dd>
+              </div>
+              <div>
+                <dt>Risco</dt>
+                <dd>conselho indevido</dd>
+              </div>
+            </dl>
+          </article>
+          <article class="domain-card">
+            <span class="domain-index">BR-D03</span>
+            <h3>Educação cívica</h3>
+            <p>Instituições, democracia, políticas públicas e participação social.</p>
+            <dl>
+              <div>
+                <dt>Critério</dt>
+                <dd>clareza pública</dd>
+              </div>
+              <div>
+                <dt>Risco</dt>
+                <dd>desinformação</dd>
+              </div>
+            </dl>
+          </article>
+          <article class="domain-card">
+            <span class="domain-index">BR-D04</span>
+            <h3>Educação financeira responsável</h3>
+            <p>Juros, dívida, crédito, orçamento e recusas contra promessa enganosa.</p>
+            <dl>
+              <div>
+                <dt>Critério</dt>
+                <dd>recusa segura</dd>
+              </div>
+              <div>
+                <dt>Risco</dt>
+                <dd>promessa financeira</dd>
+              </div>
+            </dl>
+          </article>
+          <article class="domain-card">
+            <span class="domain-index">BR-D05</span>
+            <h3>Segurança digital e golpes</h3>
+            <p>Prevenção contra fraude, phishing, clonagem, PIX falso e engenharia social.</p>
+            <dl>
+              <div>
+                <dt>Critério</dt>
+                <dd>defesa do usuário</dd>
+              </div>
+              <div>
+                <dt>Risco</dt>
+                <dd>abuso operacional</dd>
+              </div>
+            </dl>
+          </article>
+          <article class="domain-card">
+            <span class="domain-index">BR-D06</span>
+            <h3>Conhecimento regional e cultura</h3>
+            <p>Diversidade brasileira sem generalização, apropriação ou apagamento local.</p>
+            <dl>
+              <div>
+                <dt>Critério</dt>
+                <dd>contexto local</dd>
+              </div>
+              <div>
+                <dt>Risco</dt>
+                <dd>apropriação</dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </section>
+
+      <section class="section evidence">
+        <div class="section-heading">
+          <p class="eyebrow">Como o projeto ganha credibilidade</p>
+          <h2>Uma fundação aberta, verificável e sob medida para PT-BR.</h2>
+        </div>
+        <div class="evidence-row">
+          <article>
+            <h3>Dados com trilha</h3>
+            <p>Cada fonte precisa de origem, licença, risco, finalidade e decisão.</p>
+          </article>
+          <article>
+            <h3>Avaliação antes de claim</h3>
+            <p>Benchmarks PT-BR medem fatos, incerteza, segurança e linguagem clara.</p>
+          </article>
+          <article>
+            <h3>Segurança por desenho</h3>
+            <p>PII, dados sensíveis e conhecimento tradicional entram como risco central.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section trust-system" aria-labelledby="trust-system-title">
+        <div class="section-heading">
+          <p class="eyebrow">Sistema de confiança</p>
+          <h2 id="trust-system-title">Antes de virar treino, cada dado precisa atravessar método.</h2>
+        </div>
+        <ol class="trust-flow" aria-label="Fluxo mínimo de governança de dados">
+          <li>
+            <span>01</span>
+            <strong>Fonte</strong>
+            <p>origem, autoria e finalidade</p>
+          </li>
+          <li>
+            <span>02</span>
+            <strong>Licença</strong>
+            <p>permissão verificável de uso</p>
+          </li>
+          <li>
+            <span>03</span>
+            <strong>Metadados</strong>
+            <p>risco, domínio e versão</p>
+          </li>
+          <li>
+            <span>04</span>
+            <strong>Rejeição</strong>
+            <p>PII, sensível ou sem prova</p>
+          </li>
+          <li>
+            <span>05</span>
+            <strong>Avaliação</strong>
+            <p>amostra, benchmark e falhas</p>
+          </li>
+          <li>
+            <span>06</span>
+            <strong>Modelo</strong>
+            <p>somente depois de evidência</p>
+          </li>
+        </ol>
+        <p class="trust-note">
+          A LP v0 não coleta conversas. A contribuição humana entra como proposta,
+          revisão ou auditoria; não como dado automático de treinamento.
+        </p>
+      </section>
+
+      <section class="section public-commitments" aria-labelledby="commitments-title">
+        <div class="section-heading">
+          <p class="eyebrow">Compromissos públicos</p>
+          <h2 id="commitments-title">
+            O Oxigênio Brasil não começa pelo modelo. Começa pelas perguntas que todo
+            modelo deveria responder.
+          </h2>
+          <p class="section-intro">
+            De onde veio o dado, o que ele pode fazer, onde ele falha e quem pode ser afetado.
+          </p>
+        </div>
+        <div class="commitment-grid">
+          <article>
+            <span>01</span>
+            <h3>Sem fonte, sem dado.</h3>
+            <p>
+              Dados não entram por volume. Entram por origem, licença, risco,
+              finalidade e decisão documentada.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Sem benchmark, sem promessa.</h3>
+            <p>
+              A avaliação vem antes de qualquer claim público de qualidade,
+              confiabilidade ou especialização.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Sem revisão, sem treino.</h3>
+            <p>
+              Antes de qualquer treino, amostras precisam passar por revisão humana
+              e segurança contextual: golpes digitais, desinformação, dados pessoais
+              e comunidades vulneráveis.
+            </p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Sem esconder falhas.</h3>
+            <p>
+              A qualidade do projeto também será medida pelo que ele erra e por como
+              documenta esses erros.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section time-contrast" aria-labelledby="time-contrast-title">
+        <div class="section-heading">
+          <p class="eyebrow">2026 / 2051</p>
+          <h2 id="time-contrast-title">
+            O futuro brasileiro começa no que decidimos registrar, rejeitar e avaliar agora.
+          </h2>
+          <p class="section-intro">
+            A pergunta não é apenas que IA o Brasil vai usar. É que conhecimento o Brasil
+            quer preservar, auditar e tornar acessível.
+          </p>
+        </div>
+        <div class="time-grid">
+          <article class="time-panel">
+            <span class="time-year">2026</span>
+            <h3>O Brasil que temos</h3>
+            <ul>
+              <li>biomas, cidades e comunidades sob pressão documentada;</li>
+              <li>desinformação afetando cidadania, dinheiro e segurança digital;</li>
+              <li>conhecimento público disperso, difícil de acessar e avaliar;</li>
+              <li>modelos globais que frequentemente pensam inglês primeiro.</li>
+            </ul>
+          </article>
+          <article class="time-panel future">
+            <span class="time-year">2051</span>
+            <h3>O Brasil que podemos ter</h3>
+            <ul>
+              <li>informação confiável em português como infraestrutura cotidiana;</li>
+              <li>conhecimento sobre biomas, cidadania e cultura tratado com rigor;</li>
+              <li>comunidade open-source brasileira forte e autônoma;</li>
+              <li>modelos avaliados pelo contexto brasileiro, não por slogan.</li>
+            </ul>
+          </article>
+        </div>
+        <p class="time-footnote">
+          O Oxigênio Brasil não promete chegar a 2051. Promete ser honesto sobre
+          2026 e construir com quem quiser caminhar.
+        </p>
+      </section>
+
+      <section id="contribuir" class="section contribution">
+        <div class="contribution-copy">
+          <p class="eyebrow">Comunidade, com responsabilidade</p>
+          <h2>Ajude a construir o Oxigênio Brasil.</h2>
+          <p>
+            Em breve, abriremos chamadas para exemplos de português brasileiro,
+            perguntas sobre domínios brasileiros, avaliação humana, red-team,
+            revisão de fontes públicas e curadoria de dados abertos.
+          </p>
+          <p>
+            Você poderá contribuir sugerindo fontes públicas, revisando perguntas,
+            apontando riscos, testando respostas ou ajudando a avaliar se o modelo
+            fala português brasileiro com clareza.
+          </p>
+          <p class="notice">
+            Nenhuma contribuição será usada automaticamente para treinamento.
+            Todo dado precisa passar por revisão, consentimento, metadados,
+            filtros de qualidade e política de dados sensíveis.
+          </p>
+        </div>
+        <div class="contribution-side">
+          <article class="support-card">
+            <span class="support-card-label">Pesquisa aberta</span>
+            <h3>Apoie infraestrutura, não hype.</h3>
+            <p>
+              Apoios ajudam a financiar curadoria, documentação, avaliação,
+              segurança e infraestrutura futura, sem comprar influência técnica.
+            </p>
+            <button class="button primary" type="button" data-support-open>
+              Apoiar pesquisa aberta
+            </button>
+          </article>
+          <div class="contribution-actions" aria-label="Canais de contribuição">
+            <a
+              class="button secondary"
+              href="https://github.com/duhenri9/llm-oxigenio-brasil/issues/new?template=data_contribution.md"
+            >
+              Propor fonte de dados
+            </a>
+            <a class="button secondary" href="https://github.com/duhenri9/llm-oxigenio-brasil/issues">
+              Ver issues
+            </a>
+            <a class="button secondary" href="https://github.com/duhenri9/llm-oxigenio-brasil/pulls">
+              Acompanhar PRs
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section roadmap">
+        <div class="section-heading">
+          <p class="eyebrow">Próximos passos</p>
+          <h2>Do norte editorial ao sistema treinável.</h2>
+        </div>
+        <ol class="roadmap-list">
+          <li>
+            <span>V1</span>
+            <strong>Fundação auditável</strong>
+            <p>Governança, segurança, política de dados e avaliação.</p>
+          </li>
+          <li>
+            <span>V2</span>
+            <strong>Data pipeline auditável</strong>
+            <p>Manifestos preenchidos, validadores, filtros e amostras pequenas.</p>
+          </li>
+          <li>
+            <span>V3</span>
+            <strong>Benchmark PT-BR</strong>
+            <p>Avaliação por domínios brasileiros antes de claims públicos.</p>
+          </li>
+          <li>
+            <span>V4</span>
+            <strong>Primeiro SFT/LoRA</strong>
+            <p>Experimento pequeno, reproduzível, documentado e reversível.</p>
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Oxigênio Brasil - open-source, Portuguese-first, Brasil por critério.</p>
+      <div class="footer-links">
+        <a href="https://github.com/duhenri9/llm-oxigenio-brasil">GitHub</a>
+        <a href="https://github.com/duhenri9/llm-oxigenio-brasil/blob/main/HANDOFF.md">Handoff</a>
+        <a href="https://github.com/duhenri9/llm-oxigenio-brasil/blob/main/SUPPORT.md">Apoiar</a>
+      </div>
+    </footer>
+
+    <dialog
+      id="support-modal"
+      class="support-modal"
+      aria-labelledby="support-modal-title"
+      aria-describedby="support-modal-copy"
+    >
+      <div class="support-modal-content">
+        <button class="modal-close" type="button" data-support-close aria-label="Fechar apoio">
+          Fechar
+        </button>
+        <p class="eyebrow">Apoiar pesquisa aberta</p>
+        <h2 id="support-modal-title">Apoiar o Oxigênio Brasil</h2>
+        <p id="support-modal-copy" class="modal-copy">
+          Estamos construindo uma fundação aberta para pesquisa, avaliação e
+          governança de modelos de linguagem em português brasileiro.
+        </p>
+        <p class="modal-copy">
+          O apoio financeiro ajuda a cobrir curadoria de dados, documentação
+          pública, avaliação PT-BR, revisão de segurança, infraestrutura e
+          experimentos futuros.
+        </p>
+        <p class="modal-notice">
+          Apoiar o projeto não compra acesso ao modelo, influência sobre dados,
+          prioridade técnica ou promessa de resultado.
+        </p>
+        <div class="support-options" aria-label="Canais de apoio">
+          <a href="https://github.com/duhenri9/llm-oxigenio-brasil/blob/main/SUPPORT.md">
+            <strong>Apoio institucional</strong>
+            <span>Leia custos estimados, limites e formas de apoiar sem interferência técnica.</span>
+          </a>
+          <a href="https://github.com/duhenri9/llm-oxigenio-brasil/blob/main/docs/financial_report.md">
+            <strong>Transparência financeira</strong>
+            <span>Acompanhe o modelo de prestação de contas quando houver financiamento real.</span>
+          </a>
+          <a href="https://github.com/sponsors/duhenri9">
+            <strong>GitHub Sponsors</strong>
+            <span>Canal de apoio opcional, somente quando estiver habilitado na conta.</span>
+          </a>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

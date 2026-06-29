@@ -19,6 +19,10 @@ Documentos principais:
 - [`docs/brazilian_domain_strategy.md`](docs/brazilian_domain_strategy.md)
 - [`HANDOFF.md`](HANDOFF.md)
 
+Landing page pública inicial:
+
+- [`site/index.html`](site/index.html)
+
 ## Status
 
 Projeto em fase inicial. Ainda não há modelo treinado, dataset final, pesos
@@ -69,6 +73,11 @@ docs/
   brazilian_domain_strategy.md
   data_source_manifest.md
   benchmark_plan_ptbr.md
+site/
+  DESIGN_SYSTEM.md
+  index.html
+  styles.css
+  main.js
 data/
   metadata/
 src/oxigen/
@@ -114,6 +123,25 @@ Veja [`docs/model_selection_policy.md`](docs/model_selection_policy.md).
 O nome público do projeto é `Oxigênio Brasil`. Nomes de modelos, como um futuro
 `Oxigênio-1`, só devem ser usados quando houver artefato técnico, model card,
 eval card, licença e avaliação mínima.
+
+## LP Pública
+
+A LP v0 é estática, editorial e segura por desenho. Ela abre portas para
+contribuição futura via GitHub, mas não possui conversa integrada, formulário
+próprio, login, upload, coleta de prompts ou uso automático de contribuições para
+treinamento.
+
+Deploy canônico: Vercel, em projeto separado chamado `oxigenio-brasil`, com
+root directory `site`, framework preset `Other`, sem variáveis de ambiente, sem
+build obrigatório e sem GitHub Pages como canal público concorrente.
+
+Não usar o projeto Vercel do E-merge.ia para hospedar o Oxigênio Brasil.
+
+Para visualizar localmente:
+
+```bash
+python -m http.server 8000 --directory site
+```
 
 ## Apoie O Projeto
 
