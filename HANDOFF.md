@@ -408,3 +408,30 @@ filtros de PII. Ainda não deve iniciar treino, corpus grande ou publicação de
 
 A nomenclatura de modelo só deve ser usada publicamente quando houver artefato real,
 model card, eval card, licença e benchmark mínimo.
+
+## 16. Atualização -- Landing Page V0
+
+A LP pública inicial vive em `site/` como site estático, sem framework e sem
+dependências de runtime.
+
+Escopo:
+
+- apresentar o Oxigênio Brasil como iniciativa open-source, Portuguese-first;
+- comunicar domínios brasileiros críticos;
+- explicar governança antes de treinamento;
+- abrir contribuição futura por GitHub;
+- preparar deploy por GitHub Pages via `.github/workflows/pages.yml`.
+
+Fora do escopo:
+
+- conversa integrada;
+- coleta de prompts ou respostas;
+- formulário próprio;
+- login;
+- upload de arquivos;
+- uso automático de contribuições para treinamento;
+- Vercel.
+
+A página deve manter o aviso público de que nenhuma contribuição será usada
+automaticamente para treinamento e que todo dado precisa passar por revisão,
+consentimento, metadados, filtros de qualidade e política de dados sensíveis.
