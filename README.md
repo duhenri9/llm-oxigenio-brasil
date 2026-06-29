@@ -109,6 +109,12 @@ irreversivel nesta fase.
 
 Veja [`docs/model_selection_policy.md`](docs/model_selection_policy.md).
 
+## Naming
+
+O nome publico do projeto e `Oxigenio Brasil`. Nomes de modelos, como um futuro
+`Oxigenio-1`, so devem ser usados quando houver artefato tecnico, model card,
+eval card, licenca e avaliacao minima.
+
 ## Apoie O Projeto
 
 Custos futuros incluem curadoria de dados, armazenamento, avaliacao, treinamento,

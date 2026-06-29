@@ -397,3 +397,14 @@ Versao 2 -- Data Pipeline Auditavel
 
 Ela deve criar amostras pequenas, manifestos preenchidos, validadores de metadados e
 filtros de PII. Ainda nao deve iniciar treino, corpus grande ou publicacao de pesos.
+
+## Naming Guidance
+
+- Projeto publico: `Oxigenio Brasil`.
+- Primeiro modelo futuro, se e quando houver base tecnica para publicacao: `Oxigenio-1`.
+- Codename interno permitido: `Oxi`.
+- Evitar nomes informais como `o2-zuca` em README, LP, docs publicos, model cards,
+  eval cards e releases.
+
+A nomenclatura de modelo so deve ser usada publicamente quando houver artefato real,
+model card, eval card, licenca e benchmark minimo.
