@@ -13,6 +13,7 @@ componentes ou direção visual da LP.
 - traduz a tese para visitantes que não conhecem IA, LLM ou open-source;
 - mostra domínios brasileiros críticos;
 - explica governança antes de treinamento;
+- resume compromissos públicos sobre fonte, benchmark, revisão e falhas;
 - direciona contribuições para GitHub;
 - inclui CTA institucional de apoio por modal acionado pelo usuário;
 - não coleta conversas;

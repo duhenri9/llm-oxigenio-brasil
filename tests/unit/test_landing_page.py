@@ -122,6 +122,21 @@ def test_landing_page_has_trust_system_flow() -> None:
     assert "somente depois de evidência" in html
 
 
+def test_landing_page_has_public_commitments_from_research_foundation() -> None:
+    html = normalize_whitespace(read_index())
+
+    assert "Compromissos públicos" in html
+    assert "O Oxigênio Brasil não começa pelo modelo" in html
+    assert "Sem fonte, sem dado." in html
+    assert "Sem benchmark, sem promessa." in html
+    assert "Sem revisão, sem treino." in html
+    assert "Sem esconder falhas." in html
+    assert "Dados não entram por volume" in html
+    assert "risco, finalidade e decisão documentada" in html
+    assert "golpes digitais, desinformação, dados pessoais e comunidades vulneráveis" in html
+    assert "como documenta esses erros" in html
+
+
 def test_landing_page_has_user_triggered_support_modal() -> None:
     html = read_index()
     script = read_script()

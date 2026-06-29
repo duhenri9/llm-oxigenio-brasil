@@ -79,6 +79,13 @@ Fonte -> Licença -> Metadados -> Rejeição -> Avaliação -> Modelo
 Ele deve comunicar que a LP não coleta dados automaticamente e que o treinamento
 só acontece depois de revisão.
 
+### PublicCommitments
+
+Mini-seção editorial com quatro compromissos públicos derivados da fundação de
+dados, avaliação e segurança: sem fonte, sem dado; sem benchmark, sem promessa;
+sem revisão, sem treino; sem esconder falhas. Deve ser curta, memorável e não
+virar roadmap com datas ou promessa de modelo.
+
 ### TimeContrast
 
 Contraste editorial entre 2026 e 2051. Não é roadmap, promessa climática ou

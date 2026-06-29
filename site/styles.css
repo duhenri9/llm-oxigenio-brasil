@@ -496,6 +496,56 @@ h3 {
   padding-left: 1rem;
 }
 
+.public-commitments {
+  background: var(--ink);
+  color: var(--paper-strong);
+}
+
+.section-intro {
+  color: var(--muted);
+  font-size: 1.16rem;
+  line-height: 1.65;
+  max-width: 780px;
+}
+
+.public-commitments .section-intro {
+  color: rgba(255, 253, 247, 0.72);
+}
+
+.commitment-grid {
+  border-top: 1px solid rgba(255, 253, 247, 0.18);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.commitment-grid article {
+  border-right: 1px solid rgba(255, 253, 247, 0.18);
+  min-height: 18rem;
+  padding: clamp(1rem, 3vw, 1.6rem);
+}
+
+.commitment-grid article:last-child {
+  border-right: 0;
+}
+
+.commitment-grid span {
+  color: var(--gold);
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 900;
+  margin-bottom: 3rem;
+}
+
+.commitment-grid h3 {
+  color: var(--paper-strong);
+}
+
+.commitment-grid p {
+  color: rgba(255, 253, 247, 0.72);
+  line-height: 1.6;
+}
+
 .time-contrast {
   background: var(--paper-strong);
 }
@@ -750,6 +800,7 @@ h3 {
   .domain-grid,
   .evidence-row,
   .trust-flow,
+  .commitment-grid,
   .time-grid,
   .contribution,
   .roadmap-list {
@@ -757,9 +808,14 @@ h3 {
   }
 
   .status-item,
-  .evidence-row article {
+  .evidence-row article,
+  .commitment-grid article {
     border-bottom: 1px solid rgba(17, 21, 19, 0.14);
     border-right: 0;
+  }
+
+  .commitment-grid article {
+    border-bottom-color: rgba(255, 253, 247, 0.18);
   }
 
   .status-band .status-item {
