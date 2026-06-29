@@ -435,3 +435,12 @@ Fora do escopo:
 A página deve manter o aviso público de que nenhuma contribuição será usada
 automaticamente para treinamento e que todo dado precisa passar por revisão,
 consentimento, metadados, filtros de qualidade e política de dados sensíveis.
+
+Conceito narrativo registrado:
+
+- `2026`: o Brasil real de hoje, com desafios concretos de informação,
+  biomas, cidadania, cultura e segurança digital;
+- `2051`: horizonte de 25 anos para imaginar informação confiável em português
+  como infraestrutura, sem prometer que o modelo resolverá esse futuro;
+- regra editorial: usar o contraste como reflexão, não como hype, promessa verde
+  ou claim de impacto.

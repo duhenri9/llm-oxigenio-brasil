@@ -323,6 +323,59 @@ h3 {
   padding: 2rem 2rem 2rem 0;
 }
 
+.time-contrast {
+  background: var(--paper-strong);
+}
+
+.time-grid {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.time-panel {
+  background:
+    linear-gradient(135deg, rgba(45, 111, 137, 0.1), rgba(47, 107, 70, 0.06)),
+    var(--paper);
+  border: 1px solid var(--line);
+  min-height: 25rem;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.time-panel.future {
+  background:
+    linear-gradient(135deg, rgba(196, 154, 68, 0.14), rgba(169, 85, 47, 0.08)),
+    var(--paper);
+}
+
+.time-year {
+  color: var(--clay);
+  display: block;
+  font-size: clamp(3.5rem, 9vw, 8rem);
+  font-weight: 900;
+  line-height: 0.9;
+  margin-bottom: 2rem;
+}
+
+.time-panel ul {
+  color: var(--muted);
+  display: grid;
+  gap: 0.9rem;
+  line-height: 1.55;
+  margin: 1.5rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.time-footnote {
+  border-left: 4px solid var(--gold);
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.6;
+  margin: 2rem 0 0;
+  max-width: 840px;
+  padding-left: 1rem;
+}
+
 .contribution {
   align-items: start;
   background: var(--forest);
@@ -414,6 +467,7 @@ h3 {
   .split,
   .domain-grid,
   .evidence-row,
+  .time-grid,
   .contribution,
   .roadmap-list {
     grid-template-columns: 1fr;
@@ -459,4 +513,3 @@ h3 {
     scroll-behavior: auto;
   }
 }
-

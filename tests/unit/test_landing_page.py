@@ -33,3 +33,13 @@ def test_landing_page_points_contribution_to_github() -> None:
 
     assert "issues/new?template=data_contribution.md" in html
     assert "github.com/duhenri9/llm-oxigenio-brasil" in html
+
+
+def test_landing_page_has_2026_2051_narrative_without_future_promise() -> None:
+    html = read_index()
+
+    assert "2026" in html
+    assert "2051" in html
+    assert "O Brasil que temos" in html
+    assert "O Brasil que podemos ter" in html
+    assert "nao promete chegar a 2051" in html
