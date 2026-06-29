@@ -131,6 +131,12 @@ contribuição futura via GitHub, mas não possui conversa integrada, formulári
 próprio, login, upload, coleta de prompts ou uso automático de contribuições para
 treinamento.
 
+Deploy canônico: Vercel, em projeto separado chamado `oxigenio-brasil`, com
+root directory `site`, framework preset `Other`, sem variáveis de ambiente, sem
+build obrigatório e sem GitHub Pages como canal público concorrente.
+
+Não usar o projeto Vercel do E-merge.ia para hospedar o Oxigênio Brasil.
+
 Para visualizar localmente:
 
 ```bash

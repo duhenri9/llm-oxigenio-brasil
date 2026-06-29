@@ -5,6 +5,8 @@ ROOT = Path(__file__).resolve().parents[2]
 SITE_INDEX = ROOT / "site" / "index.html"
 SITE_SCRIPT = ROOT / "site" / "main.js"
 SITE_DESIGN_SYSTEM = ROOT / "site" / "DESIGN_SYSTEM.md"
+SITE_README = ROOT / "site" / "README.md"
+PAGES_WORKFLOW = ROOT / ".github" / "workflows" / "pages.yml"
 
 
 def read_index() -> str:
@@ -25,6 +27,15 @@ def test_landing_page_exists() -> None:
 
 def test_design_system_exists() -> None:
     assert SITE_DESIGN_SYSTEM.exists()
+
+
+def test_landing_page_deploy_is_vercel_without_github_pages_workflow() -> None:
+    site_readme = SITE_README.read_text(encoding="utf-8")
+
+    assert not PAGES_WORKFLOW.exists()
+    assert "O deploy canônico da LP v0 é Vercel, não GitHub Pages." in site_readme
+    assert "root directory: `site`" in site_readme
+    assert "environment variables: nenhuma" in site_readme
 
 
 def test_landing_page_has_no_first_party_data_collection_form() -> None:

@@ -420,7 +420,7 @@ Escopo:
 - comunicar domínios brasileiros críticos;
 - explicar governança antes de treinamento;
 - abrir contribuição futura por GitHub;
-- preparar deploy por GitHub Pages via `.github/workflows/pages.yml`.
+- preparar deploy estático canônico pela Vercel, com root directory `site`.
 
 Design System v0.1:
 
@@ -446,7 +446,39 @@ Fora do escopo:
 - uso automático de contribuições para treinamento;
 - pagamento embutido;
 - tracking ou analytics;
-- Vercel.
+- GitHub Pages como canal público concorrente.
+
+Deploy:
+
+- canal canônico: Vercel;
+- projeto Vercel sugerido: `oxigenio-brasil`;
+- repositório: `duhenri9/llm-oxigenio-brasil`;
+- branch de produção: `main`;
+- root directory: `site`;
+- framework preset: `Other`;
+- build command: vazio;
+- output directory: `.` ou vazio;
+- environment variables: nenhuma.
+
+Não usar o projeto Vercel do E-merge.ia para hospedar o Oxigênio Brasil.
+Não copiar variáveis de ambiente, domínio, banco, integrações ou configuração de
+produção do E-merge.ia para a LP do Oxigênio Brasil.
+
+## 17. Registro Operacional De Deploy
+
+| Projeto | Repo GitHub | Projeto Vercel | Root Directory | Framework | Branch produção | Domínio |
+| --- | --- | --- | --- | --- | --- | --- |
+| Oxigênio Brasil | `duhenri9/llm-oxigenio-brasil` | `oxigenio-brasil` | `site` | Other/static | `main` | URL Vercel primeiro |
+| E-merge.ia | `duhenri9/e-merge.ia-workspace` | `e-merge-ia` | `.` | Next.js | `main` | `emergeia.com.br` somente após validação |
+
+Regras:
+
+- não misturar repositórios;
+- não usar o mesmo projeto Vercel para os dois;
+- não copiar variáveis do E-merge.ia para o Oxigênio Brasil;
+- não anexar domínio real antes de validar preview;
+- não manter GitHub Pages e Vercel como canais públicos concorrentes sem decisão
+  explícita.
 
 A página deve manter o aviso público de que nenhuma contribuição será usada
 automaticamente para treinamento e que todo dado precisa passar por revisão,

@@ -29,3 +29,22 @@ Abrir `site/index.html` diretamente no navegador ou servir estaticamente:
 ```bash
 python -m http.server 8000 --directory site
 ```
+
+## Deploy
+
+O deploy canônico da LP v0 é Vercel, não GitHub Pages.
+
+Configuração esperada:
+
+- projeto Vercel: `oxigenio-brasil`;
+- repositório: `duhenri9/llm-oxigenio-brasil`;
+- branch de produção: `main`;
+- root directory: `site`;
+- framework preset: `Other`;
+- build command: vazio;
+- output directory: `.` ou vazio;
+- environment variables: nenhuma.
+
+Não conectar esta LP ao projeto Vercel do E-merge.ia e não criar banco,
+formulário, chat, upload, analytics, pagamento embutido ou variável de ambiente
+para a LP v0.
