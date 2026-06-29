@@ -1,3 +1,4 @@
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -50,3 +51,12 @@ def test_landing_page_keeps_model_names_out_of_public_copy() -> None:
 
     assert "Qwen" not in html
     assert "GLM" not in html
+    assert "Oxigenio-1" not in html
+    assert "Oxigênio-1" not in html
+
+
+def test_landing_page_keeps_internal_or_informal_names_out_of_public_copy() -> None:
+    html = read_index()
+
+    assert "o2-zuca" not in html.casefold()
+    assert re.search(r"\bOxi\b", html) is None
