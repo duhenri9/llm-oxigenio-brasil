@@ -1,28 +1,28 @@
 # Template De Eval Card
 
-## Nome Da Avaliacao
+## Nome Da Avaliação
 
-Preencher quando houver benchmark ou avaliacao executada.
+Preencher quando houver benchmark ou avaliação executada.
 
 ## Objetivo
 
-Qual capacidade esta avaliacao mede?
+Qual capacidade esta avaliação mede?
 
 ## Escopo
 
-- dominio:
+- domínio:
 - idioma:
-- publico:
+- público:
 - tarefa:
 - formato:
 
 ## Dataset Ou Amostra
 
 - fonte:
-- licenca:
+- licença:
 - tamanho:
-- criterio de amostragem:
-- exclusoes:
+- critério de amostragem:
+- exclusões:
 - riscos de PII:
 
 ## Metodo
@@ -30,25 +30,25 @@ Qual capacidade esta avaliacao mede?
 - modelo avaliado:
 - prompt:
 - temperatura:
-- metricas:
+- métricas:
 - avaliadores humanos:
-- juiz automatico:
+- juiz automático:
 - controle de variancia:
 
 ## Resultado
 
-| Metrica | Valor | Observacao |
+| Metrica | Valor | Observação |
 | --- | --- | --- |
 | | | |
 
 ## Falhas Observadas
 
-Registrar erros, alucinacoes, vieses, recusas inadequadas e incertezas.
+Registrar erros, alucinações, vieses, recusas inadequadas e incertezas.
 
-## Decisao
+## Decisão
 
-- aprovado para proxima fase;
-- precisa correcao;
+- aprovado para próxima fase;
+- precisa correção;
 - bloqueado;
 - inconclusivo.
 

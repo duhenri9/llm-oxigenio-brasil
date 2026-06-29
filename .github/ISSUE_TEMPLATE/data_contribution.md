@@ -1,6 +1,6 @@
 ---
 name: Data contribution
-about: Proponha uma fonte de dados para avaliacao futura
+about: Proponha uma fonte de dados para avaliação futura
 title: "[data] "
 labels: data, needs-audit
 assignees: ""
@@ -10,26 +10,26 @@ assignees: ""
 
 - Nome:
 - URL:
-- Instituicao/autoria:
-- Licenca declarada:
+- Instituição/autoria:
+- Licença declarada:
 
 ## Finalidade
 
-Explique para qual dominio, avaliacao ou etapa do projeto a fonte seria util.
+Explique para qual domínio, avaliação ou etapa do projeto a fonte seria útil.
 
 ## Riscos Conhecidos
 
-- contem dados pessoais?
-- contem material protegido por direito autoral?
-- contem dados de comunidades vulneraveis?
-- exige consentimento, convenio ou restricao de uso?
+- contém dados pessoais?
+- contém material protegido por direito autoral?
+- contém dados de comunidades vulneráveis?
+- exige consentimento, convênio ou restrição de uso?
 
-## Evidencias De Licenca
+## Evidências De Licença
 
-Inclua links publicos ou documentos que sustentem a permissao de uso.
+Inclua links públicos ou documentos que sustentem a permissão de uso.
 
-## Observacao
+## Observação
 
-Abrir esta issue nao aprova coleta, scraping, redistribuicao ou treinamento. A fonte
-precisa passar por manifesto, rejeicao e politica de dados sensiveis.
+Abrir esta issue não aprova coleta, scraping, redistribuição ou treinamento. A fonte
+precisa passar por manifesto, rejeição e política de dados sensíveis.
 

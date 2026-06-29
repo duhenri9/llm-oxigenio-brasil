@@ -2,24 +2,24 @@
 
 ## Status
 
-Nenhuma fonte esta aprovada para coleta, treinamento, redistribuicao ou publicacao.
-Este documento define o contrato de avaliacao antes de qualquer pipeline de dados.
+Nenhuma fonte está aprovada para coleta, treinamento, redistribuição ou publicação.
+Este documento define o contrato de avaliação antes de qualquer pipeline de dados.
 
 ## Objetivo
 
-Garantir que cada fonte usada pelo projeto Oxigenio Brasil tenha origem, licenca,
-finalidade, risco e decisao documentados antes de virar amostra, benchmark ou corpus.
+Garantir que cada fonte usada pelo projeto Oxigênio Brasil tenha origem, licença,
+finalidade, risco e decisão documentados antes de virar amostra, benchmark ou corpus.
 
-## Criterios Obrigatorios
+## Critérios Obrigatórios
 
-Uma fonte so pode avancar se houver:
+Uma fonte só pode avançar se houver:
 
-- URL, instituicao ou responsavel verificavel;
-- licenca compativel com o uso proposto;
-- finalidade explicita no projeto;
-- classificacao de risco de PII e dados sensiveis;
-- decisao documentada de aceitar, rejeitar ou manter pendente;
-- plano de remocao caso a fonte seja contestada.
+- URL, instituição ou responsável verificável;
+- licença compatível com o uso proposto;
+- finalidade explícita no projeto;
+- classificação de risco de PII e dados sensíveis;
+- decisão documentada de aceitar, rejeitar ou manter pendente;
+- plano de remoção caso a fonte seja contestada.
 
 ## Template De Entrada
 
@@ -47,12 +47,12 @@ auditor:
 decision_date:
 ```
 
-## Decisoes Possiveis
+## Decisões Possíveis
 
-- `approved_for_metadata_only`: pode ser catalogada, nao coletada.
-- `approved_for_eval_sample`: pode gerar amostra pequena de avaliacao.
+- `approved_for_metadata_only`: pode ser catalogada, não coletada.
+- `approved_for_eval_sample`: pode gerar amostra pequena de avaliação.
 - `approved_for_training_sample`: pode entrar em experimento pequeno.
 - `approved_for_corpus`: pode entrar em corpus maior.
-- `rejected`: nao usar.
-- `pending`: aguardar licenca, contato, revisao juridica ou auditoria.
+- `rejected`: não usar.
+- `pending`: aguardar licença, contato, revisão jurídica ou auditoria.
 

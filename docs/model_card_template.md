@@ -7,18 +7,18 @@ Preencher quando houver modelo treinado ou adaptado.
 ## Status
 
 - tipo: base, LoRA, SFT, DPO, continued pre-training ou outro;
-- versao:
+- versão:
 - data:
 - commit:
-- pesos publicados: sim/nao;
-- licenca:
+- pesos publicados: sim/não;
+- licença:
 
 ## Modelo Base
 
 - nome:
 - fornecedor/comunidade:
 - URL:
-- licenca:
+- licença:
 - justificativa de escolha:
 
 ## Dados
@@ -28,21 +28,21 @@ Preencher quando houver modelo treinado ou adaptado.
 - periodo:
 - volume:
 - idiomas:
-- dominios:
+- domínios:
 - filtros de PII:
-- filtros de licenca:
+- filtros de licença:
 
 ## Treinamento
 
-- metodo:
+- método:
 - hardware:
 - custo estimado:
 - hiperparametros:
-- duracao:
+- duração:
 - seed:
 - ferramenta:
 
-## Avaliacao
+## Avaliação
 
 - benchmarks:
 - eval cards:
@@ -51,13 +51,13 @@ Preencher quando houver modelo treinado ou adaptado.
 
 ## Uso Pretendido
 
-Descrever usos permitidos, usos nao recomendados e publicos beneficiados.
+Descrever usos permitidos, usos não recomendados e públicos beneficiados.
 
 ## Riscos
 
-Listar riscos de alucinacao, vies, seguranca, dominio sensivel, idioma e uso indevido.
+Listar riscos de alucinação, viés, segurança, domínio sensível, idioma e uso indevido.
 
-## Mudancas Desde A Versao Anterior
+## Mudancas Desde A Versão Anterior
 
-Registrar diferencas mensuraveis e regressao conhecida.
+Registrar diferenças mensuráveis e regressão conhecida.
 

@@ -1,46 +1,46 @@
-# Politica De PII E Dados Sensiveis
+# Política De PII E Dados Sensíveis
 
 ## Objetivo
 
-Evitar que o Oxigenio Brasil colete, treine, publique ou redistribua dado pessoal,
-dado sensivel ou material que exponha pessoas, comunidades ou instituicoes.
+Evitar que o Oxigênio Brasil colete, treine, publique ou redistribua dado pessoal,
+dado sensível ou material que exponha pessoas, comunidades ou instituições.
 
-## Definicoes Operacionais
+## Definições Operacionais
 
 PII inclui qualquer dado que identifique ou possa identificar uma pessoa:
 
 - nome completo combinado com contexto;
-- CPF, RG, telefone, email, endereco, IP ou identificador unico;
-- dados escolares, financeiros, juridicos, medicos ou trabalhistas;
-- imagens, audio ou transcricoes identificaveis;
+- CPF, RG, telefone, email, endereço, IP ou identificador unico;
+- dados escolares, financeiros, jurídicos, médicos ou trabalhistas;
+- imagens, áudio ou transcrições identificáveis;
 - historico de conversas privadas.
 
-Dados sensiveis incluem:
+Dados sensíveis incluem:
 
-- saude;
-- origem racial ou etnica;
+- saúde;
+- origem racial ou étnica;
 - religiao;
-- opiniao politica;
-- filiacao sindical;
+- opinião política;
+- filiação sindical;
 - vida sexual;
 - biometria;
-- dados de criancas e adolescentes;
+- dados de crianças e adolescentes;
 - conhecimento tradicional ou local que exija consentimento contextual.
 
 ## Regra De Uso
 
-- Nao usar PII real para treinamento.
-- Nao publicar exemplos com PII real.
-- Nao depender de remocao automatica como unica camada de seguranca.
-- Nao aceitar datasets de terceiros sem licenca e prova de origem.
-- Nao incluir dados de comunidades vulneraveis sem revisao humana e protocolo.
+- Não usar PII real para treinamento.
+- Não publicar exemplos com PII real.
+- Não depender de remoção automática como unica camada de segurança.
+- Não aceitar datasets de terceiros sem licença e prova de origem.
+- Não incluir dados de comunidades vulneráveis sem revisão humana e protocolo.
 
-## Acoes Futuras
+## Ações Futuras
 
 Antes do data pipeline, criar validadores para:
 
-- padroes de CPF, CNPJ, telefone, email e endereco;
+- padrões de CPF, CNPJ, telefone, email e endereço;
 - nomes combinados com dados de contato;
-- texto com alto risco medico, financeiro, juridico ou educacional individualizado;
-- amostras que exigem rejeicao manual.
+- texto com alto risco médico, financeiro, jurídico ou educacional individualizado;
+- amostras que exigem rejeição manual.
 

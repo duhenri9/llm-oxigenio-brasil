@@ -1,17 +1,17 @@
-# LLM Oxigenio Brasil
+# LLM Oxigênio Brasil
 
-**Oxigenio Brasil** e uma iniciativa open-source, Portuguese-first, para construir
-uma fundacao auditavel de pesquisa, avaliacao e adaptacao de modelos de linguagem
+**Oxigênio Brasil** é uma iniciativa open-source, Portuguese-first, para construir
+uma fundação auditável de pesquisa, avaliação e adaptação de modelos de linguagem
 ao contexto brasileiro.
 
-O projeto ainda nao tem modelo treinado. Ele organiza primeiro os criterios de
-dados, governanca, seguranca, avaliacao e contribuicao responsavel.
+O projeto ainda não tem modelo treinado. Ele organiza primeiro os critérios de
+dados, governança, segurança, avaliação e contribuição responsável.
 
 ## Norte
 
-O objetivo do projeto e construir uma base transparente para experimentar modelos
-de linguagem em portugues brasileiro, com criterios claros de dados, avaliacao,
-seguranca e governanca.
+O objetivo do projeto é construir uma base transparente para experimentar modelos
+de linguagem em português brasileiro, com critérios claros de dados, avaliação,
+segurança e governança.
 
 Documentos principais:
 
@@ -21,34 +21,34 @@ Documentos principais:
 
 ## Status
 
-Projeto em fase inicial. Ainda nao ha modelo treinado, dataset final, pesos
+Projeto em fase inicial. Ainda não há modelo treinado, dataset final, pesos
 publicados, corpus coletado, benchmark oficial ou GPU provisionada.
 
-## Principios
+## Princípios
 
-- Portugues brasileiro primeiro.
-- Transparencia de dados e metodologia.
-- Respeito a comunidades, povos indigenas, quilombolas, biomas e conhecimento local.
-- Menos codigo antes da necessidade.
-- Avaliacao antes de claims publicos.
-- Nenhum dado sensivel ou privado em datasets publicos.
-- Nenhum claim de "100% brasileiro" antes de base, dados, treino, avaliacao e licenca sustentarem isso.
+- Português brasileiro primeiro.
+- Transparência de dados e metodologia.
+- Respeito a comunidades, povos indígenas, quilombolas, biomas e conhecimento local.
+- Menos código antes da necessidade.
+- Avaliação antes de claims públicos.
+- Nenhum dado sensível ou privado em datasets públicos.
+- Nenhum claim de "100% brasileiro" antes de base, dados, treino, avaliação e licença sustentarem isso.
 
-## Dominios Brasileiros Criticos
+## Domínios Brasileiros Críticos
 
-| Dominio | Por que importa |
+| Domínio | Por que importa |
 | --- | --- |
-| Biomas, Clima e Biodiversidade | Conecta ciencia, territorio, conservacao e vida cotidiana. |
-| Cidadania, Estado e Direito Publico | Ajuda a navegar servicos, direitos e deveres sem substituir fonte oficial. |
-| Educacao Civica | Explica instituicoes, democracia, politicas publicas e participacao social. |
-| Educacao Financeira Responsavel | Reduz risco de divida, golpe e promessa financeira enganosa. |
-| Seguranca Digital e Golpes | Ajuda usuarios a reconhecer fraude, phishing e engenharia social. |
-| Conhecimento Regional e Cultura | Valoriza diversidade brasileira com cuidado contra generalizacao e apropriacao. |
+| Biomas, Clima e Biodiversidade | Conecta ciência, território, conservação e vida cotidiana. |
+| Cidadania, Estado e Direito Público | Ajuda a navegar serviços, direitos e deveres sem substituir fonte oficial. |
+| Educação Cívica | Explica instituições, democracia, políticas públicas e participação social. |
+| Educação Financeira Responsável | Reduz risco de dívida, golpe e promessa financeira enganosa. |
+| Segurança Digital e Golpes | Ajuda usuários a reconhecer fraude, phishing e engenharia social. |
+| Conhecimento Regional e Cultura | Valoriza diversidade brasileira com cuidado contra generalização e apropriação. |
 
-Leia a estrategia completa em
+Leia a estratégia completa em
 [`docs/brazilian_domain_strategy.md`](docs/brazilian_domain_strategy.md).
 
-## Governanca
+## Governança
 
 - [`SECURITY.md`](SECURITY.md)
 - [`docs/data_source_manifest.md`](docs/data_source_manifest.md)
@@ -90,7 +90,7 @@ source .venv/bin/activate
 python -m pip install -e ".[dev]"
 ```
 
-## Validacao Local
+## Validação Local
 
 ```bash
 python -m compileall src
@@ -102,24 +102,24 @@ python -m mypy src
 
 ## Modelo Base
 
-Nenhum modelo base foi escolhido de forma irreversivel. A escolha de modelo aluno
-sera definida por benchmark, custo, licenca, tooling e qualidade em PT-BR. Modelos
-externos poderao ser usados como referencia, judge ou baseline, sem decisao
-irreversivel nesta fase.
+Nenhum modelo base foi escolhido de forma irreversível. A escolha de modelo aluno
+será definida por benchmark, custo, licença, tooling e qualidade em PT-BR. Modelos
+externos poderão ser usados como referência, judge ou baseline, sem decisão
+irreversível nesta fase.
 
 Veja [`docs/model_selection_policy.md`](docs/model_selection_policy.md).
 
 ## Naming
 
-O nome publico do projeto e `Oxigenio Brasil`. Nomes de modelos, como um futuro
-`Oxigenio-1`, so devem ser usados quando houver artefato tecnico, model card,
-eval card, licenca e avaliacao minima.
+O nome público do projeto é `Oxigênio Brasil`. Nomes de modelos, como um futuro
+`Oxigênio-1`, só devem ser usados quando houver artefato técnico, model card,
+eval card, licença e avaliação mínima.
 
 ## Apoie O Projeto
 
-Custos futuros incluem curadoria de dados, armazenamento, avaliacao, treinamento,
-inferencia e documentacao publica. Valores citados no projeto sao estimativas,
-nao cotacoes firmes ou garantia de execucao.
+Custos futuros incluem curadoria de dados, armazenamento, avaliação, treinamento,
+inferência e documentação pública. Valores citados no projeto são estimativas,
+não cotações firmes ou garantia de execução.
 
 Veja [`SUPPORT.md`](SUPPORT.md).
 

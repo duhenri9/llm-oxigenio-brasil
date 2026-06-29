@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Relate um problema reproduzivel no codigo ou na documentacao
+about: Relate um problema reproduzível no código ou na documentação
 title: "[bug] "
 labels: bug
 assignees: ""
@@ -30,7 +30,7 @@ O que deveria acontecer?
 - Python:
 - Branch/commit:
 
-## Dados E Seguranca
+## Dados E Segurança
 
-Confirme que este relato nao contem segredo, dado pessoal, dataset privado ou credencial.
+Confirme que este relato não contém segredo, dado pessoal, dataset privado ou credencial.
 

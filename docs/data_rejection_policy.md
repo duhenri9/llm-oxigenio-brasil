@@ -1,41 +1,41 @@
-# Politica De Rejeicao De Dados
+# Política De Rejeição De Dados
 
-## Principio
+## Princípio
 
-Dados entram no projeto apenas por permissao explicita, finalidade clara e risco
-controlado. Na duvida, rejeitar.
+Dados entram no projeto apenas por permissão explícita, finalidade clara e risco
+controlado. Na dúvida, rejeitar.
 
-## Rejeicao Obrigatoria
+## Rejeição Obrigatória
 
 Rejeitar fontes que contenham:
 
-- dados pessoais sem base legal, consentimento ou necessidade tecnica;
-- informacao privada, credenciais, segredos ou dumps internos;
-- material com licenca incompatibilidade com treinamento, avaliacao ou redistribuicao;
-- conteudo de comunidades indigenas, quilombolas ou tradicionais sem contexto,
+- dados pessoais sem base legal, consentimento ou necessidade técnica;
+- informação privada, credenciais, segredos ou dumps internos;
+- material com licença incompatível com treinamento, avaliação ou redistribuição;
+- conteúdo de comunidades indígenas, quilombolas ou tradicionais sem contexto,
   consentimento ou protocolo adequado;
-- dados medicos, juridicos, financeiros ou educacionais individualizados;
-- conteudo obtido por scraping contra termos de uso;
-- conteudo sem autoria, origem ou versao verificavel;
-- listas de vazamento, forum privado, grupo fechado ou material pirateado.
+- dados médicos, jurídicos, financeiros ou educacionais individualizados;
+- conteúdo obtido por scraping contra termos de uso;
+- conteúdo sem autoria, origem ou versão verificável;
+- listas de vazamento, fórum privado, grupo fechado ou material pirateado.
 
-## Rejeicao Temporaria
+## Rejeição Temporária
 
 Manter como `pending` quando:
 
-- a licenca existe, mas nao cobre treinamento;
-- a fonte e publica, mas nao autoriza redistribuicao;
-- a qualidade e util, mas a origem nao esta clara;
-- ha risco cultural, regional ou sensivel que exige revisao humana especializada.
+- a licença existe, mas não cobre treinamento;
+- a fonte é pública, mas não autoriza redistribuição;
+- a qualidade é útil, mas a origem não está clara;
+- há risco cultural, regional ou sensível que exige revisão humana especializada.
 
 ## Registro
 
-Toda rejeicao deve registrar:
+Toda rejeição deve registrar:
 
 - fonte;
 - motivo;
-- evidencia;
+- evidência;
 - data;
-- responsavel;
-- possibilidade de reavaliacao.
+- responsável;
+- possibilidade de reavaliação.
 

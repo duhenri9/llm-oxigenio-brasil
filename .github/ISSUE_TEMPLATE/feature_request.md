@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Proponha melhoria de governanca, dados, avaliacao ou codigo
+about: Proponha melhoria de governança, dados, avaliação ou código
 title: "[feature] "
 labels: enhancement
 assignees: ""
@@ -12,17 +12,17 @@ Que problema esta proposta resolve?
 
 ## Proposta
 
-Descreva a menor mudanca util.
+Descreva a menor mudança útil.
 
 ## Impacto
 
 - dados:
-- seguranca:
-- licenca:
-- avaliacao:
+- segurança:
+- licença:
+- avaliação:
 - custo:
 
 ## Fora Do Escopo
 
-O que esta proposta nao deve tentar resolver neste PR?
+O que esta proposta não deve tentar resolver neste PR?
 

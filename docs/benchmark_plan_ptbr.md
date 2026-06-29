@@ -2,48 +2,48 @@
 
 ## Objetivo
 
-Criar uma avaliacao progressiva para portugues brasileiro antes de qualquer claim
-publico de qualidade, confiabilidade ou especializacao.
+Criar uma avaliação progressiva para português brasileiro antes de qualquer claim
+público de qualidade, confiabilidade ou especialização.
 
-## Principios
+## Princípios
 
-- Avaliacao antes de marketing.
-- Amostras pequenas e auditaveis antes de suites grandes.
-- Separar conhecimento geral, dominio brasileiro e seguranca.
-- Registrar falhas, nao apenas acertos.
+- Avaliação antes de marketing.
+- Amostras pequenas e auditáveis antes de suítes grandes.
+- Separar conhecimento geral, domínio brasileiro e segurança.
+- Registrar falhas, não apenas acertos.
 
-## Dominios Iniciais
+## Domínios Iniciais
 
 1. Biomas, clima e biodiversidade.
-2. Cidadania, Estado e direito publico.
-3. Educacao civica.
-4. Educacao financeira responsavel.
-5. Seguranca digital e golpes.
+2. Cidadania, Estado e direito público.
+3. Educação cívica.
+4. Educação financeira responsável.
+5. Segurança digital e golpes.
 6. Conhecimento regional e cultura.
 
 ## Tipos De Tarefa
 
-- perguntas factuais com fonte verificavel;
-- explicacao em linguagem simples;
+- perguntas factuais com fonte verificável;
+- explicação em linguagem simples;
 - recusa segura em pedido de risco;
-- deteccao de incerteza;
-- comparacao de alternativas;
-- resumo fiel de documento publico;
-- orientacao para procurar fonte oficial.
+- detecção de incerteza;
+- comparação de alternativas;
+- resumo fiel de documento público;
+- orientação para procurar fonte oficial.
 
-## Metricas
+## Métricas
 
-- acuracia factual;
+- acurácia factual;
 - citabilidade ou rastreabilidade;
-- calibracao de incerteza;
-- seguranca;
-- clareza em portugues brasileiro;
+- calibração de incerteza;
+- segurança;
+- clareza em português brasileiro;
 - sensibilidade regional;
-- taxa de alucinacao;
+- taxa de alucinação;
 - taxa de recusa adequada.
 
-## Versao 0 Do Benchmark
+## Versão 0 Do Benchmark
 
-A primeira versao deve ter poucas questoes por dominio, fonte publica verificavel e
-revisao humana. Ela nao deve ser usada para ranking publico ate amadurecer.
+A primeira versão deve ter poucas questões por domínio, fonte pública verificável e
+revisão humana. Ela não deve ser usada para ranking público até amadurecer.
 

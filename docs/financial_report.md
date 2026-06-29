@@ -1,16 +1,16 @@
-# Relatorio Financeiro
+# Relatório Financeiro
 
 ## Status
 
-Ainda nao ha financiamento recorrente registrado neste repositorio.
+Ainda não há financiamento recorrente registrado neste repositório.
 
 ## Aviso Sobre Estimativas
 
-Valores citados em documentos do projeto sao estimativas preliminares, nao cotacoes
-firmes, promessa de custo ou garantia de execucao. Aluguel de GPU, storage, anotacao,
-revisao juridica e inferencia variam por provedor, regiao, disponibilidade e cambio.
+Valores citados em documentos do projeto são estimativas preliminares, não cotações
+firmes, promessa de custo ou garantia de execução. Aluguel de GPU, storage, anotação,
+revisão jurídica e inferência variam por provedor, região, disponibilidade e câmbio.
 
-## Mes De Referencia
+## Mes De Referência
 
 ```txt
 AAAA-MM
@@ -18,22 +18,22 @@ AAAA-MM
 
 ## Entradas
 
-| Fonte | Valor | Observacao |
+| Fonte | Valor | Observação |
 | --- | ---: | --- |
 | | | |
 
 ## Saidas
 
-| Categoria | Valor | Observacao |
+| Categoria | Valor | Observação |
 | --- | ---: | --- |
 | Infraestrutura | | |
 | Dados | | |
-| Curadoria/anotacao | | |
+| Curadoria/anotação | | |
 | Treinamento | | |
-| Avaliacao | | |
-| Inferencia | | |
-| Documentacao | | |
-| Servicos externos | | |
+| Avaliação | | |
+| Inferência | | |
+| Documentação | | |
+| Serviços externos | | |
 
 ## Saldo
 
@@ -44,7 +44,7 @@ Saidas:
 Saldo final:
 ```
 
-## Evidencias
+## Evidências
 
-Adicionar links ou recibos publicos quando fizer sentido e nao expuser dados sensiveis.
+Adicionar links ou recibos públicos quando fizer sentido e não expuser dados sensíveis.
 

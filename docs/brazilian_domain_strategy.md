@@ -1,112 +1,112 @@
-# Estrategia De Dominios Brasileiros Criticos
+# Estratégia De Domínios Brasileiros Críticos
 
-## 1. Proposito
+## 1. Propósito
 
-Oxigenio Brasil deve ser avaliado onde um modelo Portuguese-first precisa ser util
-para a vida cotidiana no Brasil. A estrategia nao transforma o projeto em modelo
-especialista. Ela define dominios onde dados, avaliacao e seguranca precisam ser
+Oxigênio Brasil deve ser avaliado onde um modelo Portuguese-first precisa ser útil
+para a vida cotidiana no Brasil. A estratégia não transforma o projeto em modelo
+especialista. Ela define domínios onde dados, avaliação e segurança precisam ser
 tratados com mais rigor.
 
-## 2. O Que Esta Estrategia E
+## 2. O Que Esta Estratégia É
 
-- um mapa de governanca;
-- uma referencia para coleta futura;
+- um mapa de governança;
+- uma referência para coleta futura;
 - uma base para benchmark PT-BR;
-- uma forma de evitar claims genericos sem prova.
+- uma forma de evitar claims genéricos sem prova.
 
-## 3. O Que Esta Estrategia Nao E
+## 3. O Que Esta Estratégia Não É
 
-- autorizacao para scraping;
+- autorização para scraping;
 - dataset aprovado;
 - promessa de treinamento;
-- garantia de resposta correta em dominio sensivel;
+- garantia de resposta correta em domínio sensível;
 - claim de modelo especialista.
 
 ## 4. Biomas, Clima E Biodiversidade
 
-Objetivo: responder sobre Amazonia, Cerrado, Caatinga, Mata Atlantica, Pantanal,
-Pampa, litoral, especies, clima e conservacao com cuidado factual.
+Objetivo: responder sobre Amazônia, Cerrado, Caatinga, Mata Atlântica, Pantanal,
+Pampa, litoral, espécies, clima e conservação com cuidado factual.
 
-Fontes futuras devem priorizar instituicoes publicas, bases academicas, orgaos de
-pesquisa e materiais com licenca clara. O modelo deve reconhecer incerteza, contexto
-regional e diferenca entre evidencia cientifica, politica publica e opiniao.
+Fontes futuras devem priorizar instituições públicas, bases acadêmicas, órgãos de
+pesquisa e materiais com licença clara. O modelo deve reconhecer incerteza, contexto
+regional e diferença entre evidência científica, política pública e opinião.
 
-## 5. Cidadania, Estado E Direito Publico
+## 5. Cidadania, Estado E Direito Público
 
-Objetivo: explicar direitos, servicos publicos, deveres civicos e caminhos oficiais
-sem simular advogado, orgao publico ou decisao juridica.
+Objetivo: explicar direitos, serviços públicos, deveres cívicos e caminhos oficiais
+sem simular advogado, órgão público ou decisão jurídica.
 
-O modelo deve orientar busca por fontes oficiais e evitar aconselhamento juridico
+O modelo deve orientar busca por fontes oficiais e evitar aconselhamento jurídico
 individualizado.
 
-## 6. Educacao Civica
+## 6. Educação Cívica
 
-Objetivo: apoiar compreensao de instituicoes, democracia, Constituicao, politicas
-publicas, orcamento e participacao social.
+Objetivo: apoiar compreensão de instituições, democracia, Constituição, políticas
+públicas, orçamento e participação social.
 
-A avaliacao deve medir neutralidade, clareza, rastreabilidade e capacidade de separar
-fato, processo institucional e opiniao.
+A avaliação deve medir neutralidade, clareza, rastreabilidade e capacidade de separar
+fato, processo institucional e opinião.
 
-## 7. Educacao Financeira Responsavel
+## 7. Educação Financeira Responsável
 
-Objetivo: explicar conceitos de juros, divida, orcamento, credito, golpes financeiros
-e planejamento basico sem recomendar investimento personalizado.
+Objetivo: explicar conceitos de juros, dívida, orçamento, crédito, golpes financeiros
+e planejamento básico sem recomendar investimento personalizado.
 
-O modelo deve recusar promessas de ganho, simulacoes enganosas e orientacoes que
-coloquem usuario vulneravel em risco.
+O modelo deve recusar promessas de ganho, simulações enganosas e orientações que
+coloquem usuário vulnerável em risco.
 
-## 8. Seguranca Digital E Golpes
+## 8. Segurança Digital E Golpes
 
-Objetivo: ajudar usuarios a reconhecer phishing, fraude, engenharia social, golpes de
+Objetivo: ajudar usuários a reconhecer phishing, fraude, engenharia social, golpes de
 PIX, clonagem, falsos suportes e riscos comuns no Brasil.
 
-O modelo deve priorizar prevencao, canais oficiais e passos seguros. Nao deve ensinar
-execucao de golpe, evasao, invasao ou coleta de credenciais.
+O modelo deve priorizar prevenção, canais oficiais e passos seguros. Não deve ensinar
+execução de golpe, evasão, invasão ou coleta de credenciais.
 
 ## 9. Conhecimento Regional E Cultura
 
-Objetivo: respeitar diversidade regional, linguagem local, cultura popular, historia,
-culinaria, geografia, manifestacoes culturais e contextos territoriais.
+Objetivo: respeitar diversidade regional, linguagem local, cultura popular, história,
+culinária, geografia, manifestações culturais e contextos territoriais.
 
 O projeto deve evitar apropriar conhecimento tradicional ou local sem fonte, contexto
-e consentimento quando aplicavel.
+e consentimento quando aplicável.
 
-## 10. Estrategia De Dados
+## 10. Estratégia De Dados
 
 Antes de coletar qualquer amostra:
 
 - registrar fonte no manifesto;
-- avaliar licenca;
+- avaliar licença;
 - classificar risco de PII;
-- classificar risco cultural e sensivel;
-- decidir se a fonte serve para metadata, avaliacao, treinamento pequeno ou corpus;
-- registrar rejeicoes.
+- classificar risco cultural e sensível;
+- decidir se a fonte serve para metadata, avaliação, treinamento pequeno ou corpus;
+- registrar rejeições.
 
-## 11. Estrategia De Avaliacao
+## 11. Estratégia De Avaliação
 
-Cada dominio deve ter perguntas com:
+Cada domínio deve ter perguntas com:
 
-- resposta verificavel;
-- fonte publica;
-- criterio de correcao;
+- resposta verificável;
+- fonte pública;
+- critério de correção;
 - caso de incerteza;
 - caso de recusa segura;
-- revisao humana quando o risco for alto.
+- revisão humana quando o risco for alto.
 
-## 12. Estrategia De Seguranca
+## 12. Estratégia De Segurança
 
-Dominios brasileiros criticos exigem red-team especifico para:
+Domínios brasileiros críticos exigem red-team específico para:
 
-- alucinacao com fonte falsa;
-- conselho juridico, medico ou financeiro indevido;
-- desinformacao eleitoral ou institucional;
-- vies regional;
-- exposicao de PII;
+- alucinação com fonte falsa;
+- conselho jurídico, médico ou financeiro indevido;
+- desinformação eleitoral ou institucional;
+- viés regional;
+- exposição de PII;
 - golpes digitais;
 - uso indevido de conhecimento tradicional.
 
-## 13. Proxima Versao
+## 13. Próxima Versão
 
-A proxima etapa nao e treinamento. A proxima etapa e `data_pipeline/` pequeno,
-auditavel, com manifestos, filtros e amostras minimas aprovadas.
+A próxima etapa não é treinamento. A próxima etapa é `data_pipeline/` pequeno,
+auditável, com manifestos, filtros e amostras mínimas aprovadas.
 

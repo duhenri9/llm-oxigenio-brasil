@@ -1,16 +1,16 @@
 # Resumo
 
-Explique a mudanca em poucas linhas.
+Explique a mudança em poucas linhas.
 
-## Checklist De Seguranca
+## Checklist De Segurança
 
-- [ ] Nao inclui `.env`, token, chave, segredo ou credencial.
-- [ ] Nao inclui dataset bruto, checkpoint, peso de modelo ou dump de usuario.
-- [ ] Nao inicia coleta massiva, treinamento, inferencia publica ou GPU.
-- [ ] Nao adiciona dependencia pesada de ML ao runtime sem justificativa dedicada.
-- [ ] Atualiza documentos de governanca quando altera dados, modelo ou avaliacao.
+- [ ] Não inclui `.env`, token, chave, segredo ou credencial.
+- [ ] Não inclui dataset bruto, checkpoint, peso de modelo ou dump de usuário.
+- [ ] Não inicia coleta massiva, treinamento, inferência pública ou GPU.
+- [ ] Não adiciona dependência pesada de ML ao runtime sem justificativa dedicada.
+- [ ] Atualiza documentos de governança quando altera dados, modelo ou avaliação.
 
-## Validacao
+## Validação
 
 - [ ] `python -m compileall src`
 - [ ] `python -m pytest tests/unit/ -v`
@@ -18,7 +18,7 @@ Explique a mudanca em poucas linhas.
 - [ ] `python -m ruff format --check src tests`
 - [ ] `python -m mypy src`
 
-## Decisoes
+## Decisões
 
-Liste decisoes tecnicas relevantes e alternativas rejeitadas.
+Liste decisões técnicas relevantes e alternativas rejeitadas.
 
