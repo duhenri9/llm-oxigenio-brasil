@@ -133,6 +133,7 @@ def test_landing_page_has_public_commitments_from_research_foundation() -> None:
     assert "Sem esconder falhas." in html
     assert "Dados não entram por volume" in html
     assert "risco, finalidade e decisão documentada" in html
+    assert "amostras precisam passar por revisão humana e segurança contextual" in html
     assert "golpes digitais, desinformação, dados pessoais e comunidades vulneráveis" in html
     assert "como documenta esses erros" in html
 
