@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "llm-oxigenio-brasil"
 version = "0.1.0"
-description = "Pesquisa aberta Portuguese-first para LLMs brasileiros, dados, avaliacao e raciocinio."
+description = "Pesquisa aberta Portuguese-first para LLMs brasileiros, dados, avaliação e raciocínio."
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "Apache-2.0" }
@@ -14,10 +14,10 @@ authors = [
 ]
 keywords = [
   "llm",
-  "portugues-brasileiro",
+  "português-brasileiro",
   "nlp",
   "biodiversidade",
-  "avaliacao",
+  "avaliação",
   "open-science"
 ]
 dependencies = []
