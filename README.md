@@ -1,10 +1,11 @@
 # LLM Oxigenio Brasil
 
-**Oxigenio Brasil** e um LLM open-source, Portuguese-first, construido para
-servir a populacao brasileira com acesso confiavel ao conhecimento critico para
-a vida cotidiana. Nao e um modelo especialista em dominios -- e um modelo com
-identidade brasileira, que escolhe deliberadamente onde sera avaliado e onde
-precisa ser confiavel.
+**Oxigenio Brasil** e uma iniciativa open-source, Portuguese-first, para construir
+uma fundacao auditavel de pesquisa, avaliacao e adaptacao de modelos de linguagem
+ao contexto brasileiro.
+
+O projeto ainda nao tem modelo treinado. Ele organiza primeiro os criterios de
+dados, governanca, seguranca, avaliacao e contribuicao responsavel.
 
 ## Norte
 
@@ -101,10 +102,10 @@ python -m mypy src
 
 ## Modelo Base
 
-Nenhum modelo base foi escolhido de forma irreversivel. A hipotese inicial para
-experimentos pequenos e `Qwen3-8B` como modelo aluno. A familia `GLM-4.5` pode ser
-avaliada como teacher, judge ou baseline, nao como primeiro aluno sem matriz de
-custo, licenca, hardware e qualidade PT-BR.
+Nenhum modelo base foi escolhido de forma irreversivel. A escolha de modelo aluno
+sera definida por benchmark, custo, licenca, tooling e qualidade em PT-BR. Modelos
+externos poderao ser usados como referencia, judge ou baseline, sem decisao
+irreversivel nesta fase.
 
 Veja [`docs/model_selection_policy.md`](docs/model_selection_policy.md).
 
