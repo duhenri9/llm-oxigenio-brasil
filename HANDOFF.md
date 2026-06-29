@@ -356,3 +356,44 @@ Trimestre:
 O rascunho externo de handoff descrevia uma versao mais completa do repositorio, com CI, model stubs, inference, evaluation, data metadata e licenca de modelo. Esses itens ainda nao existem neste repo no momento deste handoff.
 
 Este arquivo prevalece como estado real do repositorio atual.
+
+## 15. Atualizacao -- Fundacao Auditavel V1
+
+Esta atualizacao registra a direcao aprovada para a primeira branch de governanca
+do projeto. O objetivo nao e treinar modelo, baixar corpus ou provisionar GPU.
+O objetivo e deixar o projeto auditavel antes de qualquer implementacao pesada.
+
+Arquivos de referencia adicionados nesta etapa:
+
+- `SECURITY.md`;
+- `.github/workflows/ci.yml`;
+- `.github/ISSUE_TEMPLATE/*`;
+- `.github/PULL_REQUEST_TEMPLATE.md`;
+- `data/metadata/README.md`;
+- `docs/brazilian_domain_strategy.md`;
+- `docs/data_source_manifest.md`;
+- `docs/data_rejection_policy.md`;
+- `docs/pii_sensitive_data_policy.md`;
+- `docs/model_selection_policy.md`;
+- `docs/model_card_template.md`;
+- `docs/eval_card_template.md`;
+- `docs/benchmark_plan_ptbr.md`;
+- `docs/financial_report.md`.
+
+Decisoes tecnicas:
+
+- `Qwen3-8B` fica como hipotese inicial de modelo aluno, nao como decisao irreversivel.
+- `GLM-4.5` pode ser teacher, judge ou baseline, nao primeiro aluno por padrao.
+- Dependencias pesadas de ML ficam fora do runtime ate haver PR proprio.
+- Custos de GPU sao estimativas, nao cotacoes ou garantia.
+- O projeto deve se apresentar como open-source, Portuguese-first, adaptado e avaliado
+  para o contexto brasileiro ate haver base tecnica para claim mais forte.
+
+Proximo passo recomendado:
+
+```txt
+Versao 2 -- Data Pipeline Auditavel
+```
+
+Ela deve criar amostras pequenas, manifestos preenchidos, validadores de metadados e
+filtros de PII. Ainda nao deve iniciar treino, corpus grande ou publicacao de pesos.

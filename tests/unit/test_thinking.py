@@ -1,4 +1,8 @@
-from oxigen.training.thinking import ENDANGERED_SPECIES, compose_thinking_prompt, get_phase_tokens
+from oxigen.training.thinking import (
+    ENDANGERED_SPECIES,
+    compose_thinking_prompt,
+    get_phase_tokens,
+)
 
 
 def test_endangered_species_seed_has_expected_size() -> None:
