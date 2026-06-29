@@ -1,24 +1,24 @@
 # Landing Page V0
 
-Site estatico da LP publica inicial do Oxigenio Brasil.
+Site estático da LP pública inicial do Oxigênio Brasil.
 
 ## Design System
 
 Leia [`DESIGN_SYSTEM.md`](DESIGN_SYSTEM.md) antes de alterar layout, tokens,
-componentes ou direcao visual da LP.
+componentes ou direção visual da LP.
 
 ## Escopo
 
-- apresenta a tese publica do projeto;
-- mostra dominios brasileiros criticos;
-- explica governanca antes de treinamento;
-- direciona contribuicoes para GitHub;
-- inclui CTA institucional de apoio por modal acionado pelo usuario;
-- nao coleta conversas;
-- nao possui formulario proprio;
-- nao possui login;
-- nao usa contribuicoes automaticamente para treino.
-- nao embute pagamento, PIX, tracking ou analytics.
+- apresenta a tese pública do projeto;
+- mostra domínios brasileiros críticos;
+- explica governança antes de treinamento;
+- direciona contribuições para GitHub;
+- inclui CTA institucional de apoio por modal acionado pelo usuário;
+- não coleta conversas;
+- não possui formulário próprio;
+- não possui login;
+- não usa contribuições automaticamente para treino.
+- não embute pagamento, PIX, tracking ou analytics.
 
 ## Rodar Localmente
 

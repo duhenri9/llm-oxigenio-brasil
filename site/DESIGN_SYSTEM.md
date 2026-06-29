@@ -1,21 +1,21 @@
 # Design System v0.1
 
-## Direcao
+## Direção
 
 Nome de trabalho: **Brazilian Research Interface**.
 
-A LP deve parecer uma superficie editorial-cientifica brasileira: clara como
-produto, rigorosa como pesquisa, brasileira no repertorio e sem copiar linguagem
+A LP deve parecer uma superfície editorial-científica brasileira: clara como
+produto, rigorosa como pesquisa, brasileira no repertório e sem copiar linguagem
 visual de marcas existentes.
 
-## Principios
+## Princípios
 
-- Brasil como criterio, nao ornamento.
+- Brasil como critério, não ornamento.
 - Pesquisa antes de marketing.
-- Governanca visivel, nao escondida em rodape.
+- Governança visível, não escondida em rodapé.
 - Futuro sem neon, biomas sem folclore, rede sem blockchain.
-- Artefatos visuais devem explicar metodo, nao decorar.
-- Nada de chat, upload, formulario proprio, login ou coleta de prompts na LP v0.
+- Artefatos visuais devem explicar método, não decorar.
+- Nada de chat, upload, formulário próprio, login ou coleta de prompts na LP v0.
 
 ## Tokens
 
@@ -25,85 +25,85 @@ visual de marcas existentes.
 | --- | --- |
 | `--ink` | texto principal, fundos institucionais |
 | `--paper` | fundo editorial quente |
-| `--paper-strong` | areas de leitura e superficies de specimen |
-| `--forest` | governanca, territorio, profundidade |
+| `--paper-strong` | áreas de leitura e superfícies de specimen |
+| `--forest` | governança, território, profundidade |
 | `--leaf` | biomas, continuidade, redes vivas |
-| `--river` | fonte, fluxo de dados, avaliacao |
-| `--clay` | tensao, territorio, alerta |
-| `--gold` | evidencia, destaque, chamada editorial |
+| `--river` | fonte, fluxo de dados, avaliação |
+| `--clay` | tensão, território, alerta |
+| `--gold` | evidência, destaque, chamada editorial |
 
 ### Tipografia
 
 - Interface: sans moderna de sistema.
-- Titulos: peso alto, ritmo editorial, sem efeito futurista.
-- Evidencia tecnica: labels pequenos, uppercase controlado e numeros tabulares.
-- Futuro: indicado por estrutura e contraste, nao por fonte sci-fi.
+- Títulos: peso alto, ritmo editorial, sem efeito futurista.
+- Evidência técnica: labels pequenos, uppercase controlado e números tabulares.
+- Futuro: indicado por estrutura e contraste, não por fonte sci-fi.
 
-### Espacamento
+### Espaçamento
 
-- Secoes usam respiro amplo.
-- Superficies de leitura usam bordas finas e grid.
-- Componentes de decisao devem ter densidade maior que marketing cards.
+- Seções usam respiro amplo.
+- Superfícies de leitura usam bordas finas e grid.
+- Componentes de decisão devem ter densidade maior que marketing cards.
 
 ## Componentes
 
 ### Hero
 
-Apresenta o projeto como iniciativa para construir fundacao auditavel. O hero deve
-mostrar territorio + rede + metodo, nao promessa de modelo pronto.
+Apresenta o projeto como iniciativa para construir fundação auditável. O hero deve
+mostrar território + rede + método, não promessa de modelo pronto.
 
 ### StatusBand
 
 Mostra o estado real: pre-alpha, sem modelo treinado, sem corpus aprovado e
-governanca em construcao.
+governança em construção.
 
 ### DomainSpecimen
 
-Substitui card generico. Cada dominio deve parecer um registro editorial-cientifico
-com indice, taxonomia, criterio de avaliacao e risco de seguranca.
+Substitui card genérico. Cada domínio deve parecer um registro editorial-científico
+com índice, taxonomia, critério de avaliação e risco de segurança.
 
 ### EvidencePanel
 
-Resume como o projeto ganha credibilidade: dados com trilha, avaliacao antes de
-claim e seguranca por desenho.
+Resume como o projeto ganha credibilidade: dados com trilha, avaliação antes de
+claim e segurança por desenho.
 
 ### TrustSystem
 
-Diagrama visual proprietario do fluxo minimo:
+Diagrama visual proprietário do fluxo mínimo:
 
 ```txt
-Fonte -> Licenca -> Metadados -> Rejeicao -> Avaliacao -> Modelo
+Fonte -> Licença -> Metadados -> Rejeição -> Avaliação -> Modelo
 ```
 
-Ele deve comunicar que a LP nao coleta dados automaticamente e que o treinamento
-so acontece depois de revisao.
+Ele deve comunicar que a LP não coleta dados automaticamente e que o treinamento
+só acontece depois de revisão.
 
 ### TimeContrast
 
-Contraste editorial entre 2026 e 2051. Nao e roadmap, promessa climatica ou
-claim de impacto; e uma pergunta de governanca.
+Contraste editorial entre 2026 e 2051. Não é roadmap, promessa climática ou
+claim de impacto; é uma pergunta de governança.
 
 ### ContributionNotice
 
-Convite para comunidade via GitHub. Deve manter a frase de seguranca:
-nenhuma contribuicao sera usada automaticamente para treinamento.
+Convite para comunidade via GitHub. Deve manter a frase de segurança:
+nenhuma contribuição será usada automaticamente para treinamento.
 
 ### SupportModal
 
-CTA institucional de apoio financeiro. Deve abrir apenas por acao do usuario e
-explicar que apoiar o projeto nao compra acesso, prioridade, influencia sobre
+CTA institucional de apoio financeiro. Deve abrir apenas por ação do usuário e
+explicar que apoiar o projeto não compra acesso, prioridade, influência sobre
 dados ou promessa de resultado.
 
 Permitido:
 
 - link para GitHub Sponsors;
 - link para `SUPPORT.md`;
-- link para relatorio financeiro;
-- apoio institucional sem formulario proprio.
+- link para relatório financeiro;
+- apoio institucional sem formulário próprio.
 
 Proibido:
 
-- popup automatico;
+- popup automático;
 - sistema de pagamento embutido;
 - script externo de pagamento;
 - PIX direto na LP;
@@ -111,14 +111,14 @@ Proibido:
 
 ### RoadmapStep
 
-Passos tecnicos pequenos, auditaveis e sem promessa de escala prematura.
+Passos técnicos pequenos, auditáveis e sem promessa de escala prematura.
 
-## Proibicoes
+## Proibições
 
-- Nao usar `o2-zuca` em comunicacao publica.
-- Nao usar `Oxi` como marca publica.
-- Nao mencionar nomes de modelos especificos na LP v0.
-- Nao transformar contribuições em dataset automaticamente.
-- Nao adicionar formulario proprio, chat, upload ou login.
-- Nao expor chave PIX pessoal na LP.
-- Nao adicionar Stripe, checkout, tracking ou analytics.
+- Não usar `o2-zuca` em comunicação pública.
+- Não usar `Oxi` como marca pública.
+- Não mencionar nomes de modelos específicos na LP v0.
+- Não transformar contribuições em dataset automaticamente.
+- Não adicionar formulário próprio, chat, upload ou login.
+- Não expor chave PIX pessoal na LP.
+- Não adicionar Stripe, checkout, tracking ou analytics.
