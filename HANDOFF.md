@@ -1,47 +1,47 @@
-# Handoff Tecnico -- LLM Oxigenio Brasil
+# Handoff Técnico -- LLM Oxigênio Brasil
 
-**Para:** Tech Lead / Dev Senior  
-**De:** Eduardo Henrique Ananias  
-**Status:** pre-alpha, fundacao inicial publicada  
-**Repositorio:** https://github.com/duhenri9/llm-oxigenio-brasil  
+**Para:** Tech Lead / Dev Senior
+**De:** Eduardo Henrique Ananias
+**Status:** pre-alpha, fundação inicial publicada
+**Repositório:** https://github.com/duhenri9/llm-oxigenio-brasil
 **Commit base deste handoff:** `ec714fb5fcc7799151bb9e39ff61837ee5531245`
 
-Este documento e o ponto de retomada do projeto. Ele separa o que ja existe no repositorio do que esta planejado para proximos PRs.
+Este documento é o ponto de retomada do projeto. Ele separa o que já existe no repositório do que está planejado para próximos PRs.
 
-## 1. Visao Executiva
+## 1. Visão Executiva
 
-LLM Oxigenio Brasil e um projeto de pesquisa aberta, Portuguese-first, para construir uma base tecnica de LLMs voltada a portugues brasileiro, biodiversidade, educacao, cultura, dados brasileiros e governanca responsavel.
+LLM Oxigênio Brasil é um projeto de pesquisa aberta, Portuguese-first, para construir uma base técnica de LLMs voltada a português brasileiro, biodiversidade, educação, cultura, dados brasileiros e governança responsável.
 
-O projeto nao e:
+O projeto não é:
 
 - wrapper sobre ChatGPT;
 - RAG simples;
-- campanha de marketing sem avaliacao;
+- campanha de marketing sem avaliação;
 - promessa de modelo treinado antes de dados, pipeline e benchmarks.
 
-O projeto e:
+O projeto é:
 
 - uma base de pesquisa aberta;
-- um repositorio de metodologia;
+- um repositório de metodologia;
 - uma trilha para curadoria de dados;
-- uma fundacao para continued pre-training, SFT e avaliacao futura;
-- um experimento de soberania tecnica Portuguese-first.
+- uma fundação para continued pre-training, SFT e avaliação futura;
+- um experimento de soberania técnica Portuguese-first.
 
-Decisoes atuais:
+Decisões atuais:
 
-| Dimensao | Decisao |
+| Dimensão | Decisão |
 | --- | --- |
-| Nome do projeto | LLM Oxigenio Brasil |
-| Slug do repositorio | `llm-oxigenio-brasil` |
+| Nome do projeto | LLM Oxigênio Brasil |
+| Slug do repositório | `llm-oxigenio-brasil` |
 | Pacote Python | `oxigen` |
 | Autor | Eduardo |
-| Idioma | Portugues brasileiro primeiro, ingles tecnico quando necessario |
-| Licenca do codigo | Apache-2.0 |
+| Idioma | Português brasileiro primeiro, inglês técnico quando necessário |
+| Licença do código | Apache-2.0 |
 | Status de modelo | Nenhum peso treinado ou publicado ainda |
 | Status de dados | Nenhum corpus coletado ainda |
-| Proximo modulo tecnico | `data_pipeline/` |
+| Próximo módulo técnico | `data_pipeline/` |
 
-## 2. Estado Atual Do Repositorio
+## 2. Estado Atual Do Repositório
 
 Estado real no commit inicial:
 
@@ -74,17 +74,17 @@ llm-oxigenio-brasil/
     |-- test_thinking.py
 ```
 
-O que esta funcional:
+O que está funcional:
 
 - pacote Python `oxigen`;
-- modulo `training.thinking`;
-- catalogo inicial com 16 especies brasileiras ameacadas;
-- vocabulario inicial de fases de raciocinio;
-- composer de prompts rastreaveis;
-- smoke tests basicos;
-- documentacao de contribuicao, conduta, suporte e north star.
+- módulo `training.thinking`;
+- catálogo inicial com 16 espécies brasileiras ameaçadas;
+- vocabulário inicial de fases de raciocínio;
+- composer de prompts rastreáveis;
+- smoke tests básicos;
+- documentação de contribuição, conduta, suporte e north star.
 
-O que ainda nao existe:
+O que ainda não existe:
 
 - `src/oxigen/data_pipeline/`;
 - `src/oxigen/model.py`;
@@ -112,24 +112,24 @@ Stack atual:
 | Lint | ruff | Declarado em `.[dev]` |
 | Dados | A definir | Pendente |
 | Treinamento | A definir entre Axolotl / TRL / HuggingFace | Pendente |
-| Inferencia | A definir entre vLLM / llama.cpp / ONNX | Pendente |
-| Avaliacao | A definir | Pendente |
+| Inferência | A definir entre vLLM / llama.cpp / ONNX | Pendente |
+| Avaliação | A definir | Pendente |
 
-Principio de engenharia:
+Princípio de engenharia:
 
 ```txt
-Antes de adicionar dependencia, modulo ou abstracao, provar que precisa existir agora.
+Antes de adicionar dependência, módulo ou abstração, provar que precisa existir agora.
 ```
 
-## 4. Modulo `thinking/`
+## 4. Módulo `thinking/`
 
-O modulo `src/oxigen/training/thinking/` e a primeira semente operacional do projeto.
+O módulo `src/oxigen/training/thinking/` é a primeira semente operacional do projeto.
 
 Arquivos:
 
-- `endangered_species.py`: 16 especies brasileiras ameacadas com bioma, status, ameacas e fato de raciocinio.
-- `vocabulary.py`: fases de raciocinio e tokens em portugues/ingles tecnico.
-- `composer.py`: cria prompts curtos combinando especie, fase e pergunta.
+- `endangered_species.py`: 16 espécies brasileiras ameaçadas com bioma, status, ameaças e fato de raciocínio.
+- `vocabulary.py`: fases de raciocínio e tokens em português/inglês técnico.
+- `composer.py`: cria prompts curtos combinando espécie, fase e pergunta.
 
 Uso atual:
 
@@ -141,16 +141,16 @@ prompt = compose_thinking_prompt("Onca-pintada", phase="verificar")
 
 Objetivo:
 
-- gerar dados sinteticos pequenos e rastreaveis;
+- gerar dados sintéticos pequenos e rastreáveis;
 - testar linguagem Portuguese-first;
-- conectar biodiversidade brasileira a tarefas de raciocinio;
-- servir como insumo futuro para SFT ou avaliacao, sem fingir que ja e dataset final.
+- conectar biodiversidade brasileira a tarefas de raciocínio;
+- servir como insumo futuro para SFT ou avaliação, sem fingir que já é dataset final.
 
 Limite:
 
-- este modulo nao e corpus;
-- nao substitui curadoria de dados;
-- nao deve ser usado para claims de desempenho.
+- este módulo não é corpus;
+- não substitui curadoria de dados;
+- não deve ser usado para claims de desempenho.
 
 ## 5. North Star De Pesquisa
 
@@ -162,25 +162,25 @@ Ele define:
 
 - tese;
 - metas iniciais;
-- instituicoes de referencia;
+- instituições de referência;
 - pipeline de pesquisa;
-- politica de dados;
-- constituicao do modelo;
+- política de dados;
+- constituição do modelo;
 - red-team brasileiro;
-- avaliacao;
-- referencias bibliograficas.
+- avaliação;
+- referências bibliográficas.
 
-Decisao importante:
+Decisão importante:
 
 ```txt
-O proximo passo tecnico real e implementar data_pipeline/,
+O próximo passo técnico real é implementar data_pipeline/,
 mas somente depois de fechar manifestos de fonte, metadados,
-regras de rejeicao e politicas de dados sensiveis.
+regras de rejeição e políticas de dados sensíveis.
 ```
 
 ## 6. Pipeline De Treinamento Planejado
 
-Fase 0: Fundacao.
+Fase 0: Fundação.
 
 - Status: em andamento.
 - Feito: repo inicial, docs, pacote Python, thinking seed.
@@ -189,35 +189,35 @@ Fase 0: Fundacao.
 Fase 1: Data pipeline.
 
 - coletores por fonte;
-- manifestos de licenca;
-- deduplicacao;
+- manifestos de licença;
+- deduplicação;
 - filtros de qualidade;
-- identificacao PT-BR;
+- identificação PT-BR;
 - metadados;
 - contagem de tokens.
 
 Fase 2: Continued pre-training.
 
-- somente depois de corpus auditavel;
-- base model ainda nao decidido em codigo;
-- Qwen 2.5 7B pode ser candidato, nao decisao implementada.
+- somente depois de corpus auditável;
+- base model ainda não decidido em código;
+- Qwen 2.5 7B pode ser candidato, não decisão implementada.
 
 Fase 3: SFT.
 
-- pares instrucao-resposta curados;
+- pares instrução-resposta curados;
 - TRL/Axolotl a avaliar;
-- injecao de raciocinio apenas se validada.
+- injeção de raciocínio apenas se validada.
 
 Fase 4: Alinhamento.
 
-- DPO/RLAIF se houver dados de preferencia;
-- constituicao brasileira;
+- DPO/RLAIF se houver dados de preferência;
+- constituição brasileira;
 - red-team brasileiro.
 
-Fase 5: Serving e avaliacao continua.
+Fase 5: Serving e avaliação contínua.
 
 - vLLM/ONNX/llama.cpp a avaliar;
-- benchmark e arena brasileira apenas depois de baseline mensuravel.
+- benchmark e arena brasileira apenas depois de baseline mensurável.
 
 ## 7. Corpus Planejado
 
@@ -225,39 +225,39 @@ Nenhum dado foi coletado ainda.
 
 Fontes candidatas:
 
-| Dominio | Fonte candidata | Status |
+| Domínio | Fonte candidata | Status |
 | --- | --- | --- |
-| Legislacao | Planalto, Senado | Nao coletado |
-| Jurisprudencia | STF e bases publicas | Nao coletado |
-| Demografia | IBGE | Nao coletado |
-| Economia | IPEA | Nao coletado |
-| Ambiente | INPE | Nao coletado |
-| Educacao | MEC/INEP | Nao coletado |
-| Conhecimento geral | Wikipedia PT-BR | Nao coletado |
-| Dominio publico | Biblioteca Nacional / Dominio Publico | Nao coletado |
-| Web | CommonCrawl filtrado | Nao coletado |
+| Legislação | Planalto, Senado | Não coletado |
+| Jurisprudência | STF e bases públicas | Não coletado |
+| Demografia | IBGE | Não coletado |
+| Economia | IPEA | Não coletado |
+| Ambiente | INPE | Não coletado |
+| Educação | MEC/INEP | Não coletado |
+| Conhecimento geral | Wikipedia PT-BR | Não coletado |
+| Domínio público | Biblioteca Nacional / Domínio Público | Não coletado |
+| Web | CommonCrawl filtrado | Não coletado |
 
 Antes de coletar:
 
-- revisar licenca;
+- revisar licença;
 - documentar fonte;
 - definir campos de metadados;
-- definir criterio de rejeicao;
-- registrar riscos de PII e dados sensiveis.
+- definir critério de rejeição;
+- registrar riscos de PII e dados sensíveis.
 
-## 8. Licencas
+## 8. Licenças
 
-Codigo:
+Código:
 
 - Apache-2.0, em `LICENSE`.
 
 Pesos de modelo:
 
 - nenhum peso publicado ainda;
-- `MODEL_LICENSE` ainda nao existe;
-- recomendacao futura: RAIL brasileira, com restricoes alinhadas a leis brasileiras e direitos humanos.
+- `MODEL_LICENSE` ainda não existe;
+- recomendação futura: RAIL brasileira, com restrições alinhadas a leis brasileiras e direitos humanos.
 
-Nao criar `MODEL_LICENSE` sem revisao juridica minima.
+Não criar `MODEL_LICENSE` sem revisão jurídica mínima.
 
 ## 9. Suporte Financeiro
 
@@ -268,40 +268,40 @@ Arquivos existentes:
 
 Canais atuais:
 
-- GitHub Sponsors: depende de habilitacao da conta/repo;
+- GitHub Sponsors: depende de habilitação da conta/repo;
 - link custom para `SUPPORT.md`;
 - PIX registrado no suporte: `11950377457`.
 
-Pendencias:
+Pendências:
 
 - habilitar GitHub Sponsors;
-- revisar se PIX deve permanecer publico;
+- revisar se PIX deve permanecer público;
 - criar links Apoia.se/PicPay, se forem usados;
-- publicar relatorio financeiro quando houver financiamento real.
+- publicar relatório financeiro quando houver financiamento real.
 
-## 10. Padroes De Engenharia
+## 10. Padrões De Engenharia
 
 Non-negotiable:
 
-- portugues primeiro;
-- sem dados sensiveis;
+- português primeiro;
+- sem dados sensíveis;
 - sem `.env`;
 - sem checkpoints ou datasets grandes no git;
-- sem dependencia nova sem justificativa;
-- sem claims de modelo sem avaliacao;
-- sem scraping sem licenca/contexto;
-- testes para qualquer modulo operacional;
-- documentar fonte e rejeicao de dados.
+- sem dependência nova sem justificativa;
+- sem claims de modelo sem avaliação;
+- sem scraping sem licença/contexto;
+- testes para qualquer módulo operacional;
+- documentar fonte e rejeição de dados.
 
 Commits:
 
 ```txt
 docs: adiciona norte de pesquisa
 feat: adiciona coletor inicial
-fix: corrige validacao de metadados
+fix: corrige validação de metadados
 ```
 
-## 11. Proximos Passos Priorizados
+## 11. Próximos Passos Priorizados
 
 Esta semana:
 
@@ -311,13 +311,13 @@ Esta semana:
 4. Criar `data/metadata/README.md` com schema.
 5. Criar branch `feat/data-pipeline`.
 
-Primeiro mes:
+Primeiro mês:
 
 1. Implementar `src/oxigen/data_pipeline/`.
 2. Definir manifesto de fontes.
-3. Criar filtros basicos.
-4. Processar amostra pequena, nao corpus completo.
-5. Criar relatorio de qualidade da amostra.
+3. Criar filtros básicos.
+4. Processar amostra pequena, não corpus completo.
+5. Criar relatório de qualidade da amostra.
 
 Trimestre:
 
@@ -326,10 +326,10 @@ Trimestre:
 3. Criar red-team brasileiro inicial.
 4. Decidir infraestrutura de treinamento.
 
-## 12. Pendencias Manuais Do Eduardo
+## 12. Pendências Manuais Do Eduardo
 
 - [ ] Habilitar GitHub Sponsors.
-- [ ] Confirmar se o PIX `11950377457` deve ficar publico.
+- [ ] Confirmar se o PIX `11950377457` deve ficar público.
 - [ ] Criar Apoia.se, se for usado.
 - [ ] Criar PicPay, se for usado.
 - [ ] Criar email de contato do projeto.
@@ -337,22 +337,74 @@ Trimestre:
 - [ ] Configurar branch protection em `main`.
 - [ ] Adicionar topics no repo: `llm`, `portuguese`, `brazil`, `open-source`, `machine-learning`, `nlp`, `amazonia`, `education`.
 
-## 13. Referencia Rapida
+## 13. Referência Rápida
 
 | Arquivo | Prioridade | Motivo |
 | --- | --- | --- |
-| `README.md` | Alta | Visao publica e setup |
-| `HANDOFF.md` | Alta | Estado real e proximos passos |
-| `docs/research_north_star.md` | Alta | Norte tecnico e cientifico |
+| `README.md` | Alta | Visão pública e setup |
+| `HANDOFF.md` | Alta | Estado real e próximos passos |
+| `docs/research_north_star.md` | Alta | Norte técnico e científico |
 | `docs/dev_senior_onboarding.md` | Alta | Fluxo para Dev Senior |
-| `CONTRIBUTING.md` | Alta | Padroes de contribuicao |
-| `CODE_OF_CONDUCT.md` | Media | Conduta e etica de dados |
-| `SUPPORT.md` | Media | Funding e transparencia |
-| `src/oxigen/training/thinking/*` | Media | Primeira semente operacional |
+| `CONTRIBUTING.md` | Alta | Padrões de contribuição |
+| `CODE_OF_CONDUCT.md` | Média | Conduta e ética de dados |
+| `SUPPORT.md` | Média | Funding e transparência |
+| `src/oxigen/training/thinking/*` | Média | Primeira semente operacional |
 | `pyproject.toml` | Alta | Metadados e deps de dev |
 
 ## 14. Nota Sobre O Handoff Original
 
-O rascunho externo de handoff descrevia uma versao mais completa do repositorio, com CI, model stubs, inference, evaluation, data metadata e licenca de modelo. Esses itens ainda nao existem neste repo no momento deste handoff.
+O rascunho externo de handoff descrevia uma versão mais completa do repositório, com CI, model stubs, inference, evaluation, data metadata e licença de modelo. Esses itens ainda não existem neste repo no momento deste handoff.
 
-Este arquivo prevalece como estado real do repositorio atual.
+Este arquivo prevalece como estado real do repositório atual.
+
+## 15. Atualização -- Fundação Auditável V1
+
+Esta atualização registra a direção aprovada para a primeira branch de governança
+do projeto. O objetivo não é treinar modelo, baixar corpus ou provisionar GPU.
+O objetivo é deixar o projeto auditável antes de qualquer implementação pesada.
+
+Arquivos de referência adicionados nesta etapa:
+
+- `SECURITY.md`;
+- `.github/workflows/ci.yml`;
+- `.github/ISSUE_TEMPLATE/*`;
+- `.github/PULL_REQUEST_TEMPLATE.md`;
+- `data/metadata/README.md`;
+- `docs/brazilian_domain_strategy.md`;
+- `docs/data_source_manifest.md`;
+- `docs/data_rejection_policy.md`;
+- `docs/pii_sensitive_data_policy.md`;
+- `docs/model_selection_policy.md`;
+- `docs/model_card_template.md`;
+- `docs/eval_card_template.md`;
+- `docs/benchmark_plan_ptbr.md`;
+- `docs/financial_report.md`.
+
+Decisões técnicas:
+
+- `Qwen3-8B` fica como hipótese inicial de modelo aluno, não como decisão irreversível.
+- `GLM-4.5` pode ser teacher, judge ou baseline, não primeiro aluno por padrão.
+- Dependências pesadas de ML ficam fora do runtime até haver PR próprio.
+- Custos de GPU são estimativas, não cotações ou garantia.
+- O projeto deve se apresentar como open-source, Portuguese-first, adaptado e avaliado
+  para o contexto brasileiro até haver base técnica para claim mais forte.
+
+Próximo passo recomendado:
+
+```txt
+Versão 2 -- Data Pipeline Auditável
+```
+
+Ela deve criar amostras pequenas, manifestos preenchidos, validadores de metadados e
+filtros de PII. Ainda não deve iniciar treino, corpus grande ou publicação de pesos.
+
+## Naming Guidance
+
+- Projeto público: `Oxigênio Brasil`.
+- Primeiro modelo futuro, se e quando houver base técnica para publicação: `Oxigênio-1`.
+- Codename interno permitido: `Oxi`.
+- Evitar nomes informais como `o2-zuca` em README, LP, docs públicos, model cards,
+  eval cards e releases.
+
+A nomenclatura de modelo só deve ser usada publicamente quando houver artefato real,
+model card, eval card, licença e benchmark mínimo.

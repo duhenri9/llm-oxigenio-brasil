@@ -1,62 +1,62 @@
 # Research North Star
 
-Este e o documento central do LLM Oxigenio Brasil.
+Este é o documento central do LLM Oxigênio Brasil.
 
-Ele define o que o projeto quer aprender, quais referencias tecnicas orientam as decisoes e quais limites nao devem ser cruzados.
+Ele define o que o projeto quer aprender, quais referências técnicas orientam as decisões e quais limites não devem ser cruzados.
 
 ## Tese
 
-O Brasil precisa de pesquisa aberta em LLMs que trate portugues brasileiro, biodiversidade, cultura, educacao, legislacao e conhecimento local como centro do problema, nao como nota de rodape multilingue.
+O Brasil precisa de pesquisa aberta em LLMs que trate português brasileiro, biodiversidade, cultura, educação, legislação e conhecimento local como centro do problema, não como nota de rodapé multilingue.
 
-O projeto nao comeca prometendo "o melhor modelo brasileiro". Ele comeca criando uma base verificavel:
+O projeto não começa prometendo "o melhor modelo brasileiro". Ele começa criando uma base verificável:
 
-- dados com origem e licenca;
+- dados com origem e licença;
 - filtros documentados;
-- avaliacao multidimensional;
+- avaliação multidimensional;
 - alinhamento com direitos e contexto brasileiro;
 - treinamento incremental;
-- transparencia suficiente para auditoria.
+- transparência suficiente para auditoria.
 
 ## Metas Iniciais
 
 - Criar pipeline de dados Portuguese-first.
-- Justificar um alvo inicial de ate 50B tokens com qualidade maior que volume.
+- Justificar um alvo inicial de até 50B tokens com qualidade maior que volume.
 - Preparar continued pre-training e SFT.
-- Usar avaliacao PT-BR antes de claims publicos.
-- Construir vocabulos e tarefas de raciocinio inspirados no tema oxigenio, biodiversidade e Brasil.
+- Usar avaliação PT-BR antes de claims públicos.
+- Construir vocábulos e tarefas de raciocínio inspirados no tema oxigênio, biodiversidade e Brasil.
 
-## Instituicoes E Contribuicoes Aplicadas
+## Instituições E Contribuições Aplicadas
 
-| Instituicao | O que traz para o Oxigenio Brasil |
+| Instituição | O que traz para o Oxigênio Brasil |
 | --- | --- |
-| Meta FAIR | Arquitetura LLaMA, continued pre-training, filtros de dados e eficiencia. |
-| Google DeepMind | Leis de escalonamento Chinchilla e criterio qualidade > escala via Gemma. |
-| Stanford HAI | Alpaca/Self-Instruct e HELM para avaliacao multidimensional. |
-| UC Berkeley | Chatbot Arena, Vicuna e vLLM para avaliacao humana e inferencia. |
-| Allen AI | OLMo e Dolma como referencia de transparencia e metadados de dados. |
+| Meta FAIR | Arquitetura LLaMA, continued pre-training, filtros de dados e eficiência. |
+| Google DeepMind | Leis de escalonamento Chinchilla e critério qualidade > escala via Gemma. |
+| Stanford HAI | Alpaca/Self-Instruct e HELM para avaliação multidimensional. |
+| UC Berkeley | Chatbot Arena, Vicuna e vLLM para avaliação humana e inferência. |
+| Allen AI | OLMo e Dolma como referência de transparência e metadados de dados. |
 | Anthropic | Constitutional AI e red-teaming com categorias brasileiras. |
-| HuggingFace | TRL, DPO e FineWeb como referencia de ferramentas e filtros. |
-| Mistral AI | Modelos pequenos eficientes e contexto longo com atencao otimizada. |
+| HuggingFace | TRL, DPO e FineWeb como referência de ferramentas e filtros. |
+| Mistral AI | Modelos pequenos eficientes e contexto longo com atenção otimizada. |
 | UW / Stanford | Chain-of-Thought, RLHF e Self-Instruct. |
-| Tsinghua | Treinamento multilingue com proporcao controlada de ingles tecnico. |
-| USP NILC | Assin2, HateBR e recursos linguisticos PT-BR. |
-| INPE | Dados ambientais, Amazonia, clima, queimadas e sensoriamento remoto. |
-| MIT, Princeton, ETH, CMU, KAIST, UFMG, UNICAMP, UFRJ | Referencias complementares em avaliacao, sistemas, linguistica, etica e ciencia aberta. |
+| Tsinghua | Treinamento multilingue com proporção controlada de inglês técnico. |
+| USP NILC | Assin2, HateBR e recursos linguísticos PT-BR. |
+| INPE | Dados ambientais, Amazônia, clima, queimadas e sensoriamento remoto. |
+| MIT, Princeton, ETH, CMU, KAIST, UFMG, UNICAMP, UFRJ | Referências complementares em avaliação, sistemas, linguística, ética e ciência aberta. |
 
 ## Pipeline De Pesquisa
 
 ```txt
-Fontes e licencas
-  -> filtros de qualidade e seguranca
+Fontes e licenças
+  -> filtros de qualidade e segurança
   -> metadados por documento
-  -> deduplicacao
-  -> mistura Portuguese-first + ingles tecnico controlado
+  -> deduplicação
+  -> mistura Portuguese-first + inglês técnico controlado
   -> continued pre-training
   -> SFT
   -> DPO/RLAIF quando houver dados suficientes
-  -> avaliacao PT-BR
+  -> avaliação PT-BR
   -> red-teaming brasileiro
-  -> publicacao auditavel
+  -> publicação auditável
 ```
 
 ## Dados
@@ -64,51 +64,51 @@ Fontes e licencas
 Todo dado precisa responder:
 
 - de onde veio;
-- qual licenca permite uso;
-- se contem PII;
-- se contem discurso de odio, violencia ou dados sensiveis;
-- se envolve conhecimento tradicional, indigena, quilombola ou territorial;
+- qual licença permite uso;
+- se contém PII;
+- se contém discurso de ódio, violência ou dados sensíveis;
+- se envolve conhecimento tradicional, indígena, quilombola ou territorial;
 - qual filtro foi aplicado;
-- qual proporcao entra no mix final.
+- qual proporção entra no mix final.
 
-## Constituicao Do Modelo
+## Constituição Do Modelo
 
-Constitutional AI inspira o metodo, mas a constituicao do projeto deve ser brasileira.
+Constitutional AI inspira o método, mas a constituição do projeto deve ser brasileira.
 
 Fontes normativas iniciais:
 
-- Constituicao Federal de 1988;
+- Constituição Federal de 1988;
 - LGPD;
-- Convencao 169 da OIT;
-- Artigo 231 da CF sobre povos indigenas;
-- principios de seguranca, transparencia e nao exploracao.
+- Convenção 169 da OIT;
+- Artigo 231 da CF sobre povos indígenas;
+- princípios de segurança, transparência e não exploração.
 
 ## Red-Team Brasileiro
 
 Categorias iniciais:
 
 1. dados pessoais e doxxing;
-2. racismo, xenofobia e odio regional;
-3. ataques a povos indigenas, quilombolas e comunidades tradicionais;
-4. desinformacao sobre saude e meio ambiente;
+2. racismo, xenofobia e ódio regional;
+3. ataques a povos indígenas, quilombolas e comunidades tradicionais;
+4. desinformação sobre saúde e meio ambiente;
 5. garimpo ilegal, madeira ilegal e dano ambiental;
 6. fraude financeira e golpe;
-7. violencia politica;
-8. sexualizacao, exploracao ou assedio.
+7. violência política;
+8. sexualização, exploração ou assédio.
 
-## Avaliacao
+## Avaliação
 
-Nao publicar claim sem avaliacao.
+Não publicar claim sem avaliação.
 
 Camadas:
 
-- capacidade linguistica PT-BR;
-- raciocinio;
-- seguranca;
+- capacidade linguística PT-BR;
+- raciocínio;
+- segurança;
 - conhecimento regional;
 - robustez contra prompt injection;
 - vieses;
-- custo/inferencia;
+- custo/inferência;
 - utilidade humana.
 
 Benchmarks candidatos:
@@ -116,10 +116,10 @@ Benchmarks candidatos:
 - Assin2;
 - HateBR;
 - tarefas de QA ambiental;
-- avaliacao humana estilo Arena;
-- HELM-like cards para transparencia.
+- avaliação humana estilo Arena;
+- HELM-like cards para transparência.
 
-## Referencias Bibliograficas
+## Referências Bibliográficas
 
 1. Touvron et al. LLaMA: Open and Efficient Foundation Language Models. 2023.
 2. Touvron et al. Llama 2: Open Foundation and Fine-Tuned Chat Models. 2023.
@@ -146,12 +146,12 @@ Benchmarks candidatos:
 23. Real, Fonseca and Oliveira. ASSIN 2 Shared Task. 2020.
 24. Vargas et al. HateBR: A Large Expert Annotated Corpus of Brazilian Instagram Comments. 2022.
 
-## Decisao Atual
+## Decisão Atual
 
-O proximo passo tecnico real e implementar `data_pipeline/`, mas somente depois de fechar:
+O próximo passo técnico real é implementar `data_pipeline/`, mas somente depois de fechar:
 
 - manifestos de fonte;
 - esquema de metadados;
-- regras de rejeicao;
-- validacao local;
-- politicas de dados sensiveis.
+- regras de rejeição;
+- validação local;
+- políticas de dados sensíveis.

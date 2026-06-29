@@ -26,7 +26,8 @@ def compose_thinking_prompt(
             f"Fase de raciocinio: {phase}",
             f"Vocabulos: {', '.join(tokens[:6])}",
             f"Pergunta: {base_question}",
-            "Responda em portugues brasileiro claro, separando evidencia, incerteza e proxima acao.",
+            "Responda em portugues brasileiro claro, separando evidencia, "
+            "incerteza e proxima acao.",
         ],
     )
 
