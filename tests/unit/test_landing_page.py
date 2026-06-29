@@ -24,8 +24,8 @@ def test_landing_page_has_no_first_party_data_collection_form() -> None:
 def test_landing_page_states_contributions_are_not_automatic_training_data() -> None:
     html = read_index()
 
-    assert "Nenhuma contribuicao sera usada automaticamente para treinamento." in html
-    assert "revisao, consentimento, metadados" in html
+    assert "Nenhuma contribuição será usada automaticamente para treinamento." in html
+    assert "revisão, consentimento, metadados" in html
 
 
 def test_landing_page_points_contribution_to_github() -> None:
@@ -42,4 +42,4 @@ def test_landing_page_has_2026_2051_narrative_without_future_promise() -> None:
     assert "2051" in html
     assert "O Brasil que temos" in html
     assert "O Brasil que podemos ter" in html
-    assert "nao promete chegar a 2051" in html
+    assert "não promete chegar a 2051" in html
