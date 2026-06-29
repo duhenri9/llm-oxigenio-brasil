@@ -1,5 +1,8 @@
 const canvas = document.querySelector("#biome-canvas");
 const ctx = canvas.getContext("2d");
+const supportModal = document.querySelector("#support-modal");
+const supportOpenButtons = document.querySelectorAll("[data-support-open]");
+const supportCloseButtons = document.querySelectorAll("[data-support-close]");
 
 const palette = ["#2f6b46", "#2d6f89", "#a9552f", "#c49a44", "#d7dccb"];
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -8,6 +11,7 @@ let width = 0;
 let height = 0;
 let points = [];
 let animationFrame = 0;
+let lastSupportTrigger = null;
 
 function resize() {
   const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
@@ -148,3 +152,43 @@ window.addEventListener("beforeunload", () => {
   cancelAnimationFrame(animationFrame);
 });
 
+function openSupportModal(event) {
+  lastSupportTrigger = event.currentTarget;
+  if (typeof supportModal.showModal === "function") {
+    supportModal.showModal();
+    return;
+  }
+  supportModal.setAttribute("open", "");
+}
+
+function closeSupportModal() {
+  if (typeof supportModal.close === "function") {
+    supportModal.close();
+  } else {
+    supportModal.removeAttribute("open");
+  }
+
+  if (lastSupportTrigger) {
+    lastSupportTrigger.focus();
+  }
+}
+
+supportOpenButtons.forEach((button) => {
+  button.addEventListener("click", openSupportModal);
+});
+
+supportCloseButtons.forEach((button) => {
+  button.addEventListener("click", closeSupportModal);
+});
+
+supportModal.addEventListener("click", (event) => {
+  if (event.target === supportModal) {
+    closeSupportModal();
+  }
+});
+
+supportModal.addEventListener("close", () => {
+  if (lastSupportTrigger) {
+    lastSupportTrigger.focus();
+  }
+});

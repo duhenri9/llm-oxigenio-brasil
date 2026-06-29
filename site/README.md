@@ -13,10 +13,12 @@ componentes ou direcao visual da LP.
 - mostra dominios brasileiros criticos;
 - explica governanca antes de treinamento;
 - direciona contribuicoes para GitHub;
+- inclui CTA institucional de apoio por modal acionado pelo usuario;
 - nao coleta conversas;
 - nao possui formulario proprio;
 - nao possui login;
 - nao usa contribuicoes automaticamente para treino.
+- nao embute pagamento, PIX, tracking ou analytics.
 
 ## Rodar Localmente
 

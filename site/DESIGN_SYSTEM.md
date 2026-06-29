@@ -88,6 +88,27 @@ claim de impacto; e uma pergunta de governanca.
 Convite para comunidade via GitHub. Deve manter a frase de seguranca:
 nenhuma contribuicao sera usada automaticamente para treinamento.
 
+### SupportModal
+
+CTA institucional de apoio financeiro. Deve abrir apenas por acao do usuario e
+explicar que apoiar o projeto nao compra acesso, prioridade, influencia sobre
+dados ou promessa de resultado.
+
+Permitido:
+
+- link para GitHub Sponsors;
+- link para `SUPPORT.md`;
+- link para relatorio financeiro;
+- apoio institucional sem formulario proprio.
+
+Proibido:
+
+- popup automatico;
+- sistema de pagamento embutido;
+- script externo de pagamento;
+- PIX direto na LP;
+- linguagem de vaquinha ou promessa de retorno.
+
 ### RoadmapStep
 
 Passos tecnicos pequenos, auditaveis e sem promessa de escala prematura.
@@ -99,4 +120,5 @@ Passos tecnicos pequenos, auditaveis e sem promessa de escala prematura.
 - Nao mencionar nomes de modelos especificos na LP v0.
 - Nao transformar contribuições em dataset automaticamente.
 - Nao adicionar formulario proprio, chat, upload ou login.
-
+- Nao expor chave PIX pessoal na LP.
+- Nao adicionar Stripe, checkout, tracking ou analytics.

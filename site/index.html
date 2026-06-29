@@ -22,6 +22,7 @@
         <a href="#metodo">Método</a>
         <a href="#dominios">Domínios</a>
         <a href="#contribuir">Contribuir</a>
+        <button class="nav-button" type="button" data-support-open>Apoiar</button>
         <a href="https://github.com/duhenri9/llm-oxigenio-brasil">GitHub</a>
       </nav>
     </header>
@@ -303,19 +304,32 @@
             filtros de qualidade e política de dados sensíveis.
           </p>
         </div>
-        <div class="contribution-actions" aria-label="Canais de contribuição">
-          <a
-            class="button primary"
-            href="https://github.com/duhenri9/llm-oxigenio-brasil/issues/new?template=data_contribution.md"
-          >
-            Propor fonte de dados
-          </a>
-          <a class="button secondary" href="https://github.com/duhenri9/llm-oxigenio-brasil/issues">
-            Ver issues
-          </a>
-          <a class="button secondary" href="https://github.com/duhenri9/llm-oxigenio-brasil/pulls">
-            Acompanhar PRs
-          </a>
+        <div class="contribution-side">
+          <article class="support-card">
+            <span class="support-card-label">Pesquisa aberta</span>
+            <h3>Apoie infraestrutura, não hype.</h3>
+            <p>
+              Apoios ajudam a financiar curadoria, documentação, avaliação,
+              segurança e infraestrutura futura, sem comprar influência técnica.
+            </p>
+            <button class="button primary" type="button" data-support-open>
+              Apoiar pesquisa aberta
+            </button>
+          </article>
+          <div class="contribution-actions" aria-label="Canais de contribuição">
+            <a
+              class="button secondary"
+              href="https://github.com/duhenri9/llm-oxigenio-brasil/issues/new?template=data_contribution.md"
+            >
+              Propor fonte de dados
+            </a>
+            <a class="button secondary" href="https://github.com/duhenri9/llm-oxigenio-brasil/issues">
+              Ver issues
+            </a>
+            <a class="button secondary" href="https://github.com/duhenri9/llm-oxigenio-brasil/pulls">
+              Acompanhar PRs
+            </a>
+          </div>
         </div>
       </section>
 
@@ -357,6 +371,48 @@
         <a href="https://github.com/duhenri9/llm-oxigenio-brasil/blob/main/SUPPORT.md">Apoiar</a>
       </div>
     </footer>
+
+    <dialog
+      id="support-modal"
+      class="support-modal"
+      aria-labelledby="support-modal-title"
+      aria-describedby="support-modal-copy"
+    >
+      <div class="support-modal-content">
+        <button class="modal-close" type="button" data-support-close aria-label="Fechar apoio">
+          Fechar
+        </button>
+        <p class="eyebrow">Apoiar pesquisa aberta</p>
+        <h2 id="support-modal-title">Apoiar o Oxigênio Brasil</h2>
+        <p id="support-modal-copy" class="modal-copy">
+          Estamos construindo uma fundação aberta para pesquisa, avaliação e
+          governança de modelos de linguagem em português brasileiro.
+        </p>
+        <p class="modal-copy">
+          O apoio financeiro ajuda a cobrir curadoria de dados, documentação
+          pública, avaliação PT-BR, revisão de segurança, infraestrutura e
+          experimentos futuros.
+        </p>
+        <p class="modal-notice">
+          Apoiar o projeto não compra acesso ao modelo, influência sobre dados,
+          prioridade técnica ou promessa de resultado.
+        </p>
+        <div class="support-options" aria-label="Canais de apoio">
+          <a href="https://github.com/sponsors/duhenri9">
+            <strong>GitHub Sponsors</strong>
+            <span>Canal de apoio quando habilitado na conta do mantenedor.</span>
+          </a>
+          <a href="https://github.com/duhenri9/llm-oxigenio-brasil/blob/main/SUPPORT.md">
+            <strong>Apoio institucional</strong>
+            <span>Leia custos estimados, limites e formas de apoiar sem interferência técnica.</span>
+          </a>
+          <a href="https://github.com/duhenri9/llm-oxigenio-brasil/blob/main/docs/financial_report.md">
+            <strong>Transparência financeira</strong>
+            <span>Acompanhe o modelo de prestação de contas quando houver financiamento real.</span>
+          </a>
+        </div>
+      </div>
+    </dialog>
 
     <script src="./main.js"></script>
   </body>

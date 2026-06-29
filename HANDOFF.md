@@ -425,13 +425,16 @@ Escopo:
 Design System v0.1:
 
 - documento: `site/DESIGN_SYSTEM.md`;
-- direcao visual: Brazilian Research Interface;
+- direção visual: Brazilian Research Interface;
 - componentes nomeados: Hero, StatusBand, DomainSpecimen, EvidencePanel,
   TrustSystem, TimeContrast, ContributionNotice e RoadmapStep;
-- artefato visual proprietario: Sistema de confianca com fluxo
-  Fonte -> Licenca -> Metadados -> Rejeicao -> Avaliacao -> Modelo;
-- cards de dominio tratados como specimens editoriais, nao cards genericos;
-- brand mark publico usa `Ox`, nao `O2`, `Oxi` ou `o2-zuca`.
+- artefato visual proprietário: Sistema de confiança com fluxo
+  Fonte -> Licença -> Metadados -> Rejeição -> Avaliação -> Modelo;
+- cards de domínio tratados como specimens editoriais, não cards genéricos;
+- brand mark público usa `Ox`, não `O2`, `Oxi` ou `o2-zuca`.
+- CTA de apoio usa modal acionado por clique, sem popup automático, sem PIX direto,
+  sem sistema de pagamento embutido e sem promessa de acesso, prioridade ou
+  influência técnica.
 
 Fora do escopo:
 
@@ -441,6 +444,8 @@ Fora do escopo:
 - login;
 - upload de arquivos;
 - uso automático de contribuições para treinamento;
+- pagamento embutido;
+- tracking ou analytics;
 - Vercel.
 
 A página deve manter o aviso público de que nenhuma contribuição será usada

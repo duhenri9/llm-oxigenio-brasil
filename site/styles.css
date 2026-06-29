@@ -99,13 +99,30 @@ a {
 }
 
 .nav-links a {
+  background: transparent;
+  border: 0;
+  color: inherit;
   font-size: 0.9rem;
   padding: 0.65rem 0.8rem;
 }
 
+.nav-button {
+  background: rgba(255, 253, 247, 0.92);
+  border: 1px solid rgba(255, 253, 247, 0.5);
+  color: var(--forest);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 800;
+  padding: 0.65rem 0.8rem;
+}
+
 .nav-links a:focus-visible,
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-button:focus-visible,
+.nav-button:hover {
   background: rgba(255, 253, 247, 0.12);
+  color: var(--paper-strong);
   outline: none;
 }
 
@@ -220,7 +237,9 @@ h3 {
 .button {
   align-items: center;
   border: 1px solid currentColor;
+  cursor: pointer;
   display: inline-flex;
+  font: inherit;
   font-weight: 750;
   justify-content: center;
   min-height: 3rem;
@@ -537,9 +556,41 @@ h3 {
   max-width: 760px;
 }
 
+.contribution-side {
+  display: grid;
+  gap: 1rem;
+}
+
 .notice {
   border-left: 4px solid var(--gold);
   padding-left: 1rem;
+}
+
+.support-card {
+  background: rgba(255, 253, 247, 0.08);
+  border: 1px solid rgba(255, 253, 247, 0.22);
+  padding: 1.25rem;
+}
+
+.support-card-label {
+  color: var(--gold);
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 900;
+  margin-bottom: 1.4rem;
+  text-transform: uppercase;
+}
+
+.support-card h3 {
+  font-family: var(--font-editorial);
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.support-card p {
+  color: rgba(255, 253, 247, 0.76);
+  line-height: 1.6;
 }
 
 .contribution-actions {
@@ -592,6 +643,82 @@ h3 {
 
 .footer-links a {
   color: var(--paper-strong);
+}
+
+.support-modal {
+  background: transparent;
+  border: 0;
+  color: var(--ink);
+  max-width: min(760px, calc(100vw - 2rem));
+  padding: 0;
+}
+
+.support-modal::backdrop {
+  background: rgba(10, 18, 15, 0.72);
+}
+
+.support-modal-content {
+  background: var(--paper-strong);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  padding: clamp(1.25rem, 4vw, 2.4rem);
+  position: relative;
+}
+
+.modal-close {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.55rem 0.7rem;
+  position: absolute;
+  right: 1rem;
+  text-transform: uppercase;
+  top: 1rem;
+}
+
+.modal-copy {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  max-width: 640px;
+}
+
+.modal-notice {
+  border-left: 4px solid var(--gold);
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 1.25rem 0;
+  padding-left: 1rem;
+}
+
+.support-options {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.support-options a {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  display: grid;
+  gap: 0.45rem;
+  padding: 1rem;
+}
+
+.support-options a:focus-visible,
+.support-options a:hover {
+  border-color: rgba(169, 85, 47, 0.5);
+  box-shadow: 0 0 0 3px rgba(196, 154, 68, 0.2);
+  outline: none;
+}
+
+.support-options span {
+  color: var(--muted);
+  line-height: 1.5;
 }
 
 @media (max-width: 900px) {
@@ -672,6 +799,11 @@ h3 {
 
   .button {
     width: 100%;
+  }
+
+  .modal-close {
+    position: static;
+    margin-bottom: 1.5rem;
   }
 }
 
