@@ -43,3 +43,10 @@ def test_landing_page_has_2026_2051_narrative_without_future_promise() -> None:
     assert "O Brasil que temos" in html
     assert "O Brasil que podemos ter" in html
     assert "não promete chegar a 2051" in html
+
+
+def test_landing_page_keeps_model_names_out_of_public_copy() -> None:
+    html = read_index()
+
+    assert "Qwen" not in html
+    assert "GLM" not in html
