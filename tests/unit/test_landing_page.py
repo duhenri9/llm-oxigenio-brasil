@@ -146,6 +146,8 @@ def test_landing_page_has_user_triggered_support_modal() -> None:
     assert "Apoiar pesquisa aberta" in html
     assert "SUPPORT.md" in html
     assert "github.com/sponsors/duhenri9" in html
+    assert html.index("SUPPORT.md") < html.index("github.com/sponsors/duhenri9")
+    assert "somente quando estiver habilitado na conta" in html
     assert re.search(r"<dialog[^>]*\sopen\b", html, re.IGNORECASE | re.DOTALL) is None
     assert "data-support-open" in html
     assert "showModal()" in script
