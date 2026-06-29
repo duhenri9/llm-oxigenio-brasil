@@ -15,6 +15,10 @@ def read_script() -> str:
     return SITE_SCRIPT.read_text(encoding="utf-8")
 
 
+def normalize_whitespace(text: str) -> str:
+    return re.sub(r"\s+", " ", text)
+
+
 def test_landing_page_exists() -> None:
     assert SITE_INDEX.exists()
 
@@ -61,12 +65,32 @@ def test_landing_page_points_contribution_to_github() -> None:
 
 def test_landing_page_has_2026_2051_narrative_without_future_promise() -> None:
     html = read_index()
+    normalized = normalize_whitespace(html)
 
     assert "2026" in html
     assert "2051" in html
     assert "O Brasil que temos" in html
     assert "O Brasil que podemos ter" in html
+    assert "que conhecimento o Brasil quer preservar, auditar e tornar acessível" in normalized
     assert "não promete chegar a 2051" in html
+
+
+def test_landing_page_explains_project_in_plain_language() -> None:
+    html = normalize_whitespace(read_index())
+
+    assert "Em termos simples" in html
+    assert "futuros modelos de IA entendam melhor o português brasileiro" in html
+    assert "Portuguese-first significa começar pelo português brasileiro" in html
+    assert "Modelos de linguagem são sistemas de IA capazes de ler" in html
+
+
+def test_landing_page_makes_future_contribution_concrete() -> None:
+    html = normalize_whitespace(read_index())
+
+    assert "Você poderá contribuir sugerindo fontes públicas" in html
+    assert "revisando perguntas" in html
+    assert "apontando riscos" in html
+    assert "avaliar se o modelo fala português brasileiro com clareza" in html
 
 
 def test_landing_page_keeps_model_names_out_of_public_copy() -> None:

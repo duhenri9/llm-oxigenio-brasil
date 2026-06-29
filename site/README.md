@@ -10,6 +10,7 @@ componentes ou direção visual da LP.
 ## Escopo
 
 - apresenta a tese pública do projeto;
+- traduz a tese para visitantes que não conhecem IA, LLM ou open-source;
 - mostra domínios brasileiros críticos;
 - explica governança antes de treinamento;
 - direciona contribuições para GitHub;

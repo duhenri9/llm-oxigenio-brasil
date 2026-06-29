@@ -50,7 +50,8 @@ visual de marcas existentes.
 ### Hero
 
 Apresenta o projeto como iniciativa para construir fundação auditável. O hero deve
-mostrar território + rede + método, não promessa de modelo pronto.
+mostrar território + rede + método, não promessa de modelo pronto. Também deve
+ter uma frase em linguagem simples para explicar a intenção a visitantes não técnicos.
 
 ### StatusBand
 
@@ -81,12 +82,15 @@ só acontece depois de revisão.
 ### TimeContrast
 
 Contraste editorial entre 2026 e 2051. Não é roadmap, promessa climática ou
-claim de impacto; é uma pergunta de governança.
+claim de impacto; é uma pergunta de governança sobre que conhecimento o Brasil
+quer preservar, auditar e tornar acessível.
 
 ### ContributionNotice
 
 Convite para comunidade via GitHub. Deve manter a frase de segurança:
-nenhuma contribuição será usada automaticamente para treinamento.
+nenhuma contribuição será usada automaticamente para treinamento. Também deve
+dar exemplos concretos de participação futura, como sugerir fontes, revisar
+perguntas, apontar riscos e avaliar clareza em português brasileiro.
 
 ### SupportModal
 
