@@ -74,6 +74,7 @@ docs/
   data_source_manifest.md
   benchmark_plan_ptbr.md
 site/
+  DESIGN_SYSTEM.md
   index.html
   styles.css
   main.js

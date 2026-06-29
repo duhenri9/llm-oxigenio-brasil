@@ -422,6 +422,17 @@ Escopo:
 - abrir contribuição futura por GitHub;
 - preparar deploy por GitHub Pages via `.github/workflows/pages.yml`.
 
+Design System v0.1:
+
+- documento: `site/DESIGN_SYSTEM.md`;
+- direcao visual: Brazilian Research Interface;
+- componentes nomeados: Hero, StatusBand, DomainSpecimen, EvidencePanel,
+  TrustSystem, TimeContrast, ContributionNotice e RoadmapStep;
+- artefato visual proprietario: Sistema de confianca com fluxo
+  Fonte -> Licenca -> Metadados -> Rejeicao -> Avaliacao -> Modelo;
+- cards de dominio tratados como specimens editoriais, nao cards genericos;
+- brand mark publico usa `Ox`, nao `O2`, `Oxi` ou `o2-zuca`.
+
 Fora do escopo:
 
 - conversa integrada;

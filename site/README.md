@@ -2,6 +2,11 @@
 
 Site estatico da LP publica inicial do Oxigenio Brasil.
 
+## Design System
+
+Leia [`DESIGN_SYSTEM.md`](DESIGN_SYSTEM.md) antes de alterar layout, tokens,
+componentes ou direcao visual da LP.
+
 ## Escopo
 
 - apresenta a tese publica do projeto;
@@ -20,4 +25,3 @@ Abrir `site/index.html` diretamente no navegador ou servir estaticamente:
 ```bash
 python -m http.server 8000 --directory site
 ```
-

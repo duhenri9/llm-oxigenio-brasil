@@ -3,6 +3,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 SITE_INDEX = ROOT / "site" / "index.html"
+SITE_DESIGN_SYSTEM = ROOT / "site" / "DESIGN_SYSTEM.md"
 
 
 def read_index() -> str:
@@ -11,6 +12,10 @@ def read_index() -> str:
 
 def test_landing_page_exists() -> None:
     assert SITE_INDEX.exists()
+
+
+def test_design_system_exists() -> None:
+    assert SITE_DESIGN_SYSTEM.exists()
 
 
 def test_landing_page_has_no_first_party_data_collection_form() -> None:
@@ -60,3 +65,16 @@ def test_landing_page_keeps_internal_or_informal_names_out_of_public_copy() -> N
 
     assert "o2-zuca" not in html.casefold()
     assert re.search(r"\bOxi\b", html) is None
+    assert "O2" not in html
+
+
+def test_landing_page_has_trust_system_flow() -> None:
+    html = read_index()
+
+    assert "Sistema de confiança" in html
+    assert "Fonte" in html
+    assert "Licença" in html
+    assert "Metadados" in html
+    assert "Rejeição" in html
+    assert "Avaliação" in html
+    assert "somente depois de evidência" in html
