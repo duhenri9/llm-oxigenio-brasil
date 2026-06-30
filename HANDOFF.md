@@ -344,6 +344,8 @@ Trimestre:
 | `README.md` | Alta | Visão pública e setup |
 | `HANDOFF.md` | Alta | Estado real e próximos passos |
 | `docs/research_north_star.md` | Alta | Norte técnico e científico |
+| `docs/roadmap.md` | Alta | Sequência técnica sem execução prematura |
+| `docs/references/maritaca_sabia_landscape.md` | Alta | Landscape brasileiro de maturidade e avaliação |
 | `docs/dev_senior_onboarding.md` | Alta | Fluxo para Dev Senior |
 | `CONTRIBUTING.md` | Alta | Padrões de contribuição |
 | `CODE_OF_CONDUCT.md` | Média | Conduta e ética de dados |
@@ -492,3 +494,33 @@ Conceito narrativo registrado:
   como infraestrutura, sem prometer que o modelo resolverá esse futuro;
 - regra editorial: usar o contraste como reflexão, não como hype, promessa verde
   ou claim de impacto.
+
+## 18. Atualização -- Roadmap Técnico E Landscape Brasileiro
+
+Foi incorporado um landscape técnico sobre Maritaca/Sabiá como referência externa
+de maturidade, avaliação e pipeline de dados:
+
+- `docs/references/maritaca_sabia_landscape.md`;
+- `docs/roadmap.md`;
+- `docs/research_north_star.md`;
+- `docs/benchmark_plan_ptbr.md`.
+
+Decisão:
+
+- Maritaca/Sabiá serve como referência metodológica, não como plano para copiar.
+- O próximo passo continua sendo `data_pipeline/`, começando por amostras pequenas,
+  manifestos, licença, PII, rejeição, metadados e validação local.
+- Benchmarks como OAB-Bench, Magis-Bench e MARCA podem inspirar rubricas,
+  checklists e avaliação estruturada, mas reuso depende de licença e revisão.
+- Modelos externos podem ser avaliados como teacher, judge ou baseline, sem virar
+  dependência central de modelo fechado.
+
+Fora do escopo desta atualização:
+
+- treino;
+- dataset real;
+- scraping;
+- download de pesos;
+- dependência pesada;
+- alteração da LP pública;
+- claim comparativo contra Maritaca/Sabiá.
