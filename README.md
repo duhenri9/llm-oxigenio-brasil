@@ -16,7 +16,9 @@ segurança e governança.
 Documentos principais:
 
 - [`docs/research_north_star.md`](docs/research_north_star.md)
+- [`docs/roadmap.md`](docs/roadmap.md)
 - [`docs/brazilian_domain_strategy.md`](docs/brazilian_domain_strategy.md)
+- [`docs/references/maritaca_sabia_landscape.md`](docs/references/maritaca_sabia_landscape.md)
 - [`HANDOFF.md`](HANDOFF.md)
 
 Landing page pública inicial:
@@ -62,6 +64,8 @@ Leia a estratégia completa em
 - [`docs/model_card_template.md`](docs/model_card_template.md)
 - [`docs/eval_card_template.md`](docs/eval_card_template.md)
 - [`docs/benchmark_plan_ptbr.md`](docs/benchmark_plan_ptbr.md)
+- [`docs/roadmap.md`](docs/roadmap.md)
+- [`docs/references/maritaca_sabia_landscape.md`](docs/references/maritaca_sabia_landscape.md)
 - [`docs/financial_report.md`](docs/financial_report.md)
 - [`data/metadata/README.md`](data/metadata/README.md)
 
@@ -71,6 +75,9 @@ Leia a estratégia completa em
 docs/
   research_north_star.md
   brazilian_domain_strategy.md
+  roadmap.md
+  references/
+    maritaca_sabia_landscape.md
   data_source_manifest.md
   benchmark_plan_ptbr.md
 site/

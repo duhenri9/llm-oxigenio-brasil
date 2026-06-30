@@ -19,9 +19,9 @@ O projeto não começa prometendo "o melhor modelo brasileiro". Ele começa cria
 
 ## Metas Iniciais
 
-- Criar pipeline de dados Portuguese-first.
-- Justificar um alvo inicial de até 50B tokens com qualidade maior que volume.
-- Preparar continued pre-training e SFT.
+- Criar pipeline de dados Portuguese-first com manifestos, metadados e rejeição documentada.
+- Começar com amostras pequenas, auditáveis e reproduzíveis antes de qualquer escala.
+- Preparar o caminho para continued pre-training e SFT, sem executar antes de benchmark, eval card e revisão de licença.
 - Usar avaliação PT-BR antes de claims públicos.
 - Construir vocábulos e tarefas de raciocínio inspirados no tema oxigênio, biodiversidade e Brasil.
 
@@ -41,7 +41,33 @@ O projeto não começa prometendo "o melhor modelo brasileiro". Ele começa cria
 | Tsinghua | Treinamento multilingue com proporção controlada de inglês técnico. |
 | USP NILC | Assin2, HateBR e recursos linguísticos PT-BR. |
 | INPE | Dados ambientais, Amazônia, clima, queimadas e sensoriamento remoto. |
+| Maritaca AI / Sabiá | Referência brasileira de maturidade em adaptação para português, avaliação local e pipeline de dados. |
 | MIT, Princeton, ETH, CMU, KAIST, UFMG, UNICAMP, UFRJ | Referências complementares em avaliação, sistemas, linguística, ética e ciência aberta. |
+
+## Referências Brasileiras De Maturidade
+
+Maritaca/Sabiá demonstra que adaptação para português brasileiro, continued
+pretraining, avaliação com exames brasileiros e benchmarks especializados são
+caminhos tecnicamente relevantes.
+
+O Oxigênio Brasil usa esse ecossistema como referência, mas mantém uma tese
+própria:
+
+- abertura;
+- rastreabilidade;
+- benchmarks em domínios brasileiros críticos;
+- limites explícitos;
+- segurança contextual;
+- documentação pública.
+
+Maritaca/Sabiá é referência externa de maturidade técnica. Oxigênio Brasil não
+tenta copiar Sabiá; tenta construir uma fundação aberta, auditável e
+complementar para domínios brasileiros ainda pouco cobertos.
+
+Ver também:
+
+- [`docs/references/maritaca_sabia_landscape.md`](references/maritaca_sabia_landscape.md)
+- [`docs/roadmap.md`](roadmap.md)
 
 ## Pipeline De Pesquisa
 
@@ -115,6 +141,7 @@ Benchmarks candidatos:
 
 - Assin2;
 - HateBR;
+- OAB-Bench, Magis-Bench e MARCA como referências metodológicas;
 - tarefas de QA ambiental;
 - avaliação humana estilo Arena;
 - HELM-like cards para transparência.
@@ -145,6 +172,9 @@ Benchmarks candidatos:
 22. Zhao et al. A Survey of Large Language Models. 2023.
 23. Real, Fonseca and Oliveira. ASSIN 2 Shared Task. 2020.
 24. Vargas et al. HateBR: A Large Expert Annotated Corpus of Brazilian Instagram Comments. 2022.
+25. Maritaca AI. Building High-Quality Datasets for Portuguese LLMs: From Common Crawl Snapshots to Industrial-Grade Corpora. 2025.
+26. Maritaca AI. Sabiá-4 Technical Report. 2026.
+27. Maritaca AI. OAB-Bench, Magis-Bench and MARCA benchmark repositories.
 
 ## Decisão Atual
 
@@ -155,3 +185,6 @@ O próximo passo técnico real é implementar `data_pipeline/`, mas somente depo
 - regras de rejeição;
 - validação local;
 - políticas de dados sensíveis.
+
+Esse passo deve começar por amostras pequenas, auditáveis e reproduzíveis, sem
+meta operacional de volume grande e sem treino de modelo.
