@@ -8,7 +8,7 @@ scraping, publicação de pesos ou claims públicos de desempenho.
 
 ## V1 -- Fundação Auditável
 
-Status: em andamento.
+Status: base inicial concluída; evolução contínua.
 
 - Documentar tese, domínios brasileiros críticos e limites do projeto.
 - Registrar políticas de fonte, licença, PII, rejeição e metadados.
