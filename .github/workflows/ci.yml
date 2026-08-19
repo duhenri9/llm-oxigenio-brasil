@@ -12,15 +12,15 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@bfe8cc55a7890e3d6672eda6460ef37bfcc70755
         with:
           python-version: "3.11"
           cache: pip
@@ -43,7 +43,7 @@ jobs:
       - name: Mypy
         run: python -m mypy src
 
-      - name: Execute PT-BR benchmark evidence slice
+      - name: Execute original PT-BR benchmark slice
         run: |
           python -m oxigen.benchmarks.ptbr_intent \
             --dataset data/benchmarks/ptbr-public-interest-intent-v0.jsonl \
@@ -67,9 +67,96 @@ jobs:
           }, indent=2))
           PY
 
-      - name: Upload benchmark evidence
-        uses: actions/upload-artifact@v4
+      - name: Generate operational evidence pack
+        run: |
+          oxigen-evidence \
+            --dataset data/benchmarks/ptbr-public-interest-intent-v0.jsonl \
+            --source-manifest data/benchmarks/ptbr-public-interest-intent-v0.manifest.json \
+            --out-dir artifacts/ptbr-suite
+
+      - name: Prove drift monitor positive control
+        run: |
+          oxigen-drift \
+            --reference data/benchmarks/ptbr-public-interest-intent-v0.jsonl \
+            --candidate data/benchmarks/ptbr-public-interest-intent-v0.jsonl \
+            --expect PASS \
+            --out artifacts/drift-self-check.json
+
+      - name: Build drift negative control
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          source = Path("data/benchmarks/ptbr-public-interest-intent-v0.jsonl")
+          target = Path("artifacts/drift-negative-control.jsonl")
+          target.parent.mkdir(parents=True, exist_ok=True)
+          rows = []
+          for line in source.read_text(encoding="utf-8").splitlines():
+              if not line.strip():
+                  continue
+              row = json.loads(line)
+              if row["split"] == "eval":
+                  row["text"] = (row["text"] + " contexto adicional") * 8
+              rows.append(json.dumps(row, ensure_ascii=False, sort_keys=True))
+          target.write_text("\n".join(rows) + "\n", encoding="utf-8")
+          print(target)
+          PY
+
+      - name: Prove drift monitor detects the negative control
+        run: |
+          oxigen-drift \
+            --reference data/benchmarks/ptbr-public-interest-intent-v0.jsonl \
+            --candidate artifacts/drift-negative-control.jsonl \
+            --expect DRIFT \
+            --out artifacts/drift-negative-control-result.json
+
+      - name: Build evidence API container
+        run: docker build -t oxigenio-evidence-ci .
+
+      - name: Smoke-test container runtime and benchmark execution
+        run: |
+          container_id=$(docker run -d -p 8000:8000 oxigenio-evidence-ci)
+          trap 'docker rm -f "$container_id" >/dev/null 2>&1 || true' EXIT
+          ready=0
+          for attempt in $(seq 1 20); do
+            if curl --fail --silent \
+              http://127.0.0.1:8000/health \
+              > artifacts/container-health.json; then
+              ready=1
+              break
+            fi
+            sleep 1
+          done
+          if [ "$ready" -ne 1 ]; then
+            docker logs "$container_id"
+            exit 1
+          fi
+          cat artifacts/container-health.json
+          curl --fail --silent --request POST \
+            http://127.0.0.1:8000/v1/benchmarks/ptbr-intent/run \
+            > artifacts/container-benchmark.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          payload = json.loads(
+              Path("artifacts/container-benchmark.json").read_text(encoding="utf-8")
+          )
+          assert payload["suite"] == "ptbr-public-interest-intent-suite"
+          assert len(payload["models"]) == 3
+          assert len(payload["dataset_sha256"]) == 64
+          assert "not evidence" in payload["claim_boundary"].lower()
+          print(json.dumps({
+              "suite": payload["suite"],
+              "models": [model["model_id"] for model in payload["models"]],
+              "dataset_sha256": payload["dataset_sha256"],
+          }, indent=2))
+          PY
+
+      - name: Upload operational ML evidence
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: oxigenio-ptbr-benchmark-evidence
-          path: artifacts/ptbr-public-interest-intent-v0.json
+          name: oxigenio-operational-ml-evidence
+          path: artifacts/
           if-no-files-found: error

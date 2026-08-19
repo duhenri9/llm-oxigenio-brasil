@@ -4,7 +4,7 @@
 
 Oxigênio Brasil is an open-source research initiative focused on Brazilian Portuguese, data governance, model evaluation and responsible adaptation. The project does **not** claim to have trained a Brazilian foundation model yet. Its current public standard is narrower: make assumptions, datasets, evaluation paths and limitations inspectable before larger model claims are made.
 
-> **Current executable milestone:** the repository now ships a deterministic PT-BR machine-learning benchmark vertical slice with a versioned synthetic dataset, frozen train/eval splits, a TF-IDF + logistic-regression baseline, metrics, per-example predictions, dataset SHA-256 evidence, tests and CI.
+> **Current executable milestone:** the repository ships a deterministic PT-BR ML evaluation slice with a versioned synthetic dataset, frozen train/eval splits, three reproducible baselines, machine-readable evidence, drift controls, a small FastAPI surface, a container image and CI gates that execute the complete operational path.
 
 ## Em português
 
@@ -12,7 +12,7 @@ O **Oxigênio Brasil** é uma iniciativa open-source, Portuguese-first, para con
 
 O projeto ainda não possui um modelo fundacional próprio treinado. Em vez de antecipar esse claim, organiza e executa primeiro critérios de dados, governança, segurança, avaliação e contribuição responsável.
 
-## Veja uma execução de ML real
+## Veja a esteira executável
 
 Requisitos: Python 3.11+.
 
@@ -22,20 +22,64 @@ cd llm-oxigenio-brasil
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -e ".[dev]"
-python -m oxigen.benchmarks.ptbr_intent
+oxigen-evidence --out-dir artifacts/ptbr-suite
 ```
 
-A execução produz um artefato JSON inspecionável em:
+O evidence pack registra:
 
 ```text
-artifacts/ptbr-public-interest-intent-v0.json
+artifacts/ptbr-suite/
+  dataset-manifest.json
+  eval-card.md
+  evidence-manifest.json
+  experiment.json
+  metrics.json
+  report.html
 ```
 
-Esse artefato registra a identidade exata do benchmark, SHA-256 do dataset, configuração do baseline, métricas, matriz de confusão e previsões individuais da avaliação.
+A suíte compara um majority-class control, word TF-IDF + logistic regression e character-boundary TF-IDF + logistic regression sobre o mesmo split congelado. O manifesto final contém SHA-256 dos artefatos para tornar a execução inspecionável.
 
-**Limite do claim:** o dataset v0 é pequeno, sintético e escrito no próprio repositório. Ele serve para provar a esteira reprodutível de ML e avaliação; suas métricas **não** são evidência de qualidade real de um modelo PT-BR em produção.
+O benchmark original e estreito continua disponível:
 
-Detalhes: [`docs/ptbr_public_interest_benchmark.md`](docs/ptbr_public_interest_benchmark.md).
+```bash
+oxigen-benchmark
+```
+
+**Limite do claim:** o dataset v0 é pequeno, sintético e escrito no próprio repositório. Ele serve para provar a esteira reprodutível de ML, avaliação, packaging e monitoramento; suas métricas **não** são evidência de qualidade real de um modelo PT-BR em produção.
+
+Detalhes:
+
+- [`docs/ptbr_public_interest_benchmark.md`](docs/ptbr_public_interest_benchmark.md)
+- [`docs/operational-evidence.md`](docs/operational-evidence.md)
+
+## Drift com negative control
+
+O monitor de drift tem semântica explícita `PASS | DRIFT | INDETERMINATE` e compara distribuição de labels, tamanho médio em caracteres e contagem média de tokens.
+
+```bash
+oxigen-drift \
+  --reference data/benchmarks/ptbr-public-interest-intent-v0.jsonl \
+  --candidate data/benchmarks/ptbr-public-interest-intent-v0.jsonl \
+  --expect PASS
+```
+
+O CI também constrói deliberadamente um dataset deslocado e exige que o monitor retorne `DRIFT`. Um detector que não captura o negative control não é aceito como evidência.
+
+## API e container
+
+```bash
+docker build -t oxigenio-evidence .
+docker run --rm -p 8000:8000 oxigenio-evidence
+```
+
+Superfícies atuais:
+
+- `GET /health`
+- `GET /v1/benchmarks`
+- `POST /v1/benchmarks/ptbr-intent/run`
+- documentação OpenAPI em `/docs`
+
+O CI constrói o container, inicia a API e verifica o health endpoint antes de aceitar a mudança. Isso prova packaging e execução operacional; **não** é um claim de que já exista um serviço público de produção com SLA.
 
 ## Norte
 
@@ -47,6 +91,7 @@ Documentos principais:
 - [`docs/roadmap.md`](docs/roadmap.md)
 - [`docs/brazilian_domain_strategy.md`](docs/brazilian_domain_strategy.md)
 - [`docs/ptbr_public_interest_benchmark.md`](docs/ptbr_public_interest_benchmark.md)
+- [`docs/operational-evidence.md`](docs/operational-evidence.md)
 - [`docs/references/maritaca_sabia_landscape.md`](docs/references/maritaca_sabia_landscape.md)
 - [`HANDOFF.md`](HANDOFF.md)
 
@@ -61,8 +106,12 @@ Landing page pública:
 - pacote Python instalável em modo de desenvolvimento;
 - testes unitários, Ruff e MyPy em CI;
 - benchmark determinístico de classificação de texto PT-BR;
+- três baselines comparáveis sobre split congelado;
 - dataset sintético versionado com manifesto de provenance e limites de uso;
-- geração de evidência JSON reproduzível;
+- evidence pack com experiment record, métricas, eval card, HTML report e digests;
+- monitor de drift com positive e negative controls;
+- API FastAPI pequena e documentada;
+- imagem Docker construída e smoke-tested em CI;
 - componentes experimentais em `src/oxigen/`.
 
 ### Ainda não existe — e não é reivindicado
@@ -72,6 +121,8 @@ Landing page pública:
 - pesos de modelo publicados;
 - corpus de treinamento consolidado;
 - benchmark oficial representativo do Brasil real;
+- benchmark externo promovido sem revisão explícita de licença/proveniência;
+- deploy público durável com SLA;
 - GPU ou infraestrutura de treinamento comprometida;
 - claim de segurança, factualidade ou cobertura cultural ampla.
 
@@ -121,6 +172,7 @@ docs/
 site/
 src/oxigen/
   benchmarks/
+  monitoring/
   training/
 tests/
   unit/
@@ -134,7 +186,8 @@ python -m pytest tests/unit/ -v
 python -m ruff check src tests
 python -m ruff format --check src tests
 python -m mypy src
-python -m oxigen.benchmarks.ptbr_intent
+oxigen-benchmark
+oxigen-evidence --out-dir artifacts/ptbr-suite
 ```
 
 ## Modelo base
