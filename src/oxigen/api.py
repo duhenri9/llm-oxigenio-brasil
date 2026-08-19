@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 from pathlib import Path
 from typing import Any
 
@@ -10,14 +11,19 @@ from pydantic import BaseModel
 
 from oxigen.benchmarks.suite import SUITE_NAME, SUITE_VERSION, run_suite
 
-REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
-DATASET_PATH = REPOSITORY_ROOT / "data/benchmarks/ptbr-public-interest-intent-v0.jsonl"
+DATASET_PATH = Path(
+    os.environ.get(
+        "OXIGEN_DATASET_PATH",
+        "data/benchmarks/ptbr-public-interest-intent-v0.jsonl",
+    )
+)
 
 app = FastAPI(
     title="Oxigênio Brasil Evidence API",
     description=(
         "Operational surface for reproducible PT-BR benchmark evidence. "
-        "The bundled benchmark fixture is synthetic and does not establish real-world model quality."
+        "The bundled benchmark fixture is synthetic and does not establish "
+        "real-world model quality."
     ),
     version="0.1.0",
 )
