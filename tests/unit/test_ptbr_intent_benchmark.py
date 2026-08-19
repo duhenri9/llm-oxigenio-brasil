@@ -52,12 +52,8 @@ def test_loader_rejects_duplicate_text_across_splits(tmp_path: Path) -> None:
     fixture.write_text(
         "\n".join(
             [
-                json.dumps(
-                    {"id": "a", "text": "texto duplicado", "label": "x", "split": "train"}
-                ),
-                json.dumps(
-                    {"id": "b", "text": "texto duplicado", "label": "x", "split": "eval"}
-                ),
+                json.dumps({"id": "a", "text": "texto duplicado", "label": "x", "split": "train"}),
+                json.dumps({"id": "b", "text": "texto duplicado", "label": "x", "split": "eval"}),
             ]
         )
         + "\n",
