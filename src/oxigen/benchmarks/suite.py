@@ -248,8 +248,8 @@ This card records one reproducible engineering benchmark execution over the bund
 
 ## Runtime
 
-- Python: `{result.runtime['python']}`
-- scikit-learn: `{result.runtime['scikit_learn']}`
+- Python: `{result.runtime["python"]}`
+- scikit-learn: `{result.runtime["scikit_learn"]}`
 
 ## Claim boundary
 
