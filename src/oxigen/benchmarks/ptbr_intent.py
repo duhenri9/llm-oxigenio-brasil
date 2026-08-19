@@ -14,14 +14,10 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
 
-from sklearn.feature_extraction.text import TfidfVectorizer  # type: ignore[import-untyped]
-from sklearn.linear_model import LogisticRegression  # type: ignore[import-untyped]
-from sklearn.metrics import (  # type: ignore[import-untyped]
-    accuracy_score,
-    confusion_matrix,
-    f1_score,
-)
-from sklearn.pipeline import Pipeline  # type: ignore[import-untyped]
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, confusion_matrix, f1_score
+from sklearn.pipeline import Pipeline
 
 BENCHMARK_NAME = "ptbr-public-interest-intent"
 BENCHMARK_VERSION = "0.1.0"
