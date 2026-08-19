@@ -105,9 +105,7 @@ def load_examples(path: Path) -> list[Example]:
 
             required = {"id", "text", "label", "split"}
             if set(raw) != required:
-                raise ValueError(
-                    f"line {line_number} must contain exactly {sorted(required)}"
-                )
+                raise ValueError(f"line {line_number} must contain exactly {sorted(required)}")
 
             values = {key: raw[key] for key in required}
             if not all(isinstance(value, str) and value.strip() for value in values.values()):
@@ -121,9 +119,7 @@ def load_examples(path: Path) -> list[Example]:
             )
 
             if example.split not in EXPECTED_SPLITS:
-                raise ValueError(
-                    f"line {line_number} has unsupported split {example.split!r}"
-                )
+                raise ValueError(f"line {line_number} has unsupported split {example.split!r}")
             if example.id in seen_ids:
                 raise ValueError(f"duplicate id {example.id!r}")
             if example.text.casefold() in seen_text:
