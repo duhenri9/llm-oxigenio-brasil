@@ -173,8 +173,7 @@ def run_benchmark(dataset_path: Path) -> BenchmarkResult:
                 "classifier",
                 LogisticRegression(
                     max_iter=1_000,
-                    random_state=42,
-                    solver="liblinear",
+                    solver="lbfgs",
                 ),
             ),
         ]
@@ -211,7 +210,7 @@ def run_benchmark(dataset_path: Path) -> BenchmarkResult:
         model={
             "family": "tfidf-logistic-regression",
             "vectorizer": "TfidfVectorizer(ngram_range=(1, 2), sublinear_tf=True)",
-            "classifier": "LogisticRegression(solver='liblinear', random_state=42)",
+            "classifier": "LogisticRegression(solver='lbfgs', max_iter=1000)",
         },
         train_examples=len(train),
         eval_examples=len(evaluation),
