@@ -26,15 +26,25 @@ dependencies = []
 benchmark = [
   "scikit-learn>=1.5,<2"
 ]
+api = [
+  "scikit-learn>=1.5,<2",
+  "fastapi>=0.115,<1",
+  "uvicorn>=0.30,<1"
+]
 dev = [
   "pytest>=8.0",
   "ruff>=0.8",
   "mypy>=1.10",
-  "scikit-learn>=1.5,<2"
+  "scikit-learn>=1.5,<2",
+  "fastapi>=0.115,<1",
+  "uvicorn>=0.30,<1",
+  "httpx>=0.27,<1"
 ]
 
 [project.scripts]
 oxigen-benchmark = "oxigen.benchmarks.ptbr_intent:main"
+oxigen-evidence = "oxigen.benchmarks.suite:main"
+oxigen-drift = "oxigen.monitoring.drift:main"
 
 [project.urls]
 Homepage = "https://github.com/duhenri9/llm-oxigenio-brasil"
