@@ -1,0 +1,39 @@
+{
+  "name": "ptbr-public-interest-intent",
+  "version": "0.1.0",
+  "language": "pt-BR",
+  "task": "single-label text intent classification",
+  "origin": "repository-authored synthetic fixture",
+  "license": "Apache-2.0 repository content",
+  "records": 48,
+  "train_records": 36,
+  "eval_records": 12,
+  "labels": [
+    "biodiversidade",
+    "cidadania",
+    "cultura_regional",
+    "educacao_civica",
+    "financas",
+    "seguranca_digital"
+  ],
+  "contains_personal_data": false,
+  "contains_user_data": false,
+  "intended_use": [
+    "exercise the repository's reproducible ML pipeline",
+    "test dataset validation and evidence generation",
+    "provide a deterministic baseline for future benchmark adapters"
+  ],
+  "not_intended_use": [
+    "claim real-world Brazilian Portuguese model quality",
+    "claim domain safety or factual accuracy",
+    "replace evaluation on independently sourced public datasets",
+    "production decision making"
+  ],
+  "known_limitations": [
+    "small synthetic sample",
+    "repository-authored language distribution",
+    "no natural user-query distribution",
+    "no demographic, regional or dialect coverage claim",
+    "no robustness or adversarial coverage claim"
+  ]
+}

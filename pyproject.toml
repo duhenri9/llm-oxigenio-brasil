@@ -23,11 +23,18 @@ keywords = [
 dependencies = []
 
 [project.optional-dependencies]
+benchmark = [
+  "scikit-learn>=1.5,<2"
+]
 dev = [
   "pytest>=8.0",
   "ruff>=0.8",
-  "mypy>=1.10"
+  "mypy>=1.10",
+  "scikit-learn>=1.5,<2"
 ]
+
+[project.scripts]
+oxigen-benchmark = "oxigen.benchmarks.ptbr_intent:main"
 
 [project.urls]
 Homepage = "https://github.com/duhenri9/llm-oxigenio-brasil"
@@ -53,3 +60,7 @@ select = ["E", "F", "I", "UP", "B"]
 python_version = "3.11"
 strict = true
 mypy_path = "src"
+
+[[tool.mypy.overrides]]
+module = ["sklearn", "sklearn.*"]
+ignore_missing_imports = true

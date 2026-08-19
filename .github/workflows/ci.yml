@@ -6,17 +6,24 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: pip
 
       - name: Install dev dependencies
         run: python -m pip install -e ".[dev]"
@@ -36,3 +43,33 @@ jobs:
       - name: Mypy
         run: python -m mypy src
 
+      - name: Execute PT-BR benchmark evidence slice
+        run: |
+          python -m oxigen.benchmarks.ptbr_intent \
+            --dataset data/benchmarks/ptbr-public-interest-intent-v0.jsonl \
+            --out artifacts/ptbr-public-interest-intent-v0.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("artifacts/ptbr-public-interest-intent-v0.json")
+          payload = json.loads(path.read_text(encoding="utf-8"))
+          assert payload["benchmark"] == "ptbr-public-interest-intent"
+          assert payload["benchmark_version"] == "0.1.0"
+          assert payload["train_examples"] == 36
+          assert payload["eval_examples"] == 12
+          assert len(payload["dataset_sha256"]) == 64
+          assert len(payload["predictions"]) == 12
+          print(json.dumps({
+              "accuracy": payload["accuracy"],
+              "macro_f1": payload["macro_f1"],
+              "dataset_sha256": payload["dataset_sha256"],
+          }, indent=2))
+          PY
+
+      - name: Upload benchmark evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: oxigenio-ptbr-benchmark-evidence
+          path: artifacts/ptbr-public-interest-intent-v0.json
+          if-no-files-found: error

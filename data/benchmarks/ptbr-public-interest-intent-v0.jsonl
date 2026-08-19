@@ -1,0 +1,48 @@
+{"id":"bio-train-01","text":"Quais biomas brasileiros concentram maior biodiversidade de espécies?","label":"biodiversidade","split":"train"}
+{"id":"bio-train-02","text":"Como o desmatamento afeta a fauna da Amazônia?","label":"biodiversidade","split":"train"}
+{"id":"bio-train-03","text":"Quero entender a conservação de espécies ameaçadas no Cerrado.","label":"biodiversidade","split":"train"}
+{"id":"bio-train-04","text":"O que são corredores ecológicos e por que ajudam animais silvestres?","label":"biodiversidade","split":"train"}
+{"id":"bio-train-05","text":"Explique a importância da Mata Atlântica para plantas endêmicas.","label":"biodiversidade","split":"train"}
+{"id":"bio-train-06","text":"Como queimadas no Pantanal prejudicam habitats e populações de animais?","label":"biodiversidade","split":"train"}
+{"id":"bio-eval-01","text":"Quais ações protegem espécies nativas ameaçadas de extinção?","label":"biodiversidade","split":"eval"}
+{"id":"bio-eval-02","text":"Por que preservar habitats naturais ajuda a diversidade de fauna e flora?","label":"biodiversidade","split":"eval"}
+{"id":"cid-train-01","text":"Como emitir um documento em um serviço público digital?","label":"cidadania","split":"train"}
+{"id":"cid-train-02","text":"Quero entender meus direitos ao usar um atendimento do governo.","label":"cidadania","split":"train"}
+{"id":"cid-train-03","text":"Onde encontro informações oficiais sobre benefícios públicos?","label":"cidadania","split":"train"}
+{"id":"cid-train-04","text":"Como acompanhar uma solicitação feita a um órgão público?","label":"cidadania","split":"train"}
+{"id":"cid-train-05","text":"Qual é a diferença entre lei, decreto e regulamento no Brasil?","label":"cidadania","split":"train"}
+{"id":"cid-train-06","text":"Como verificar uma informação antes de tomar uma decisão sobre um serviço estatal?","label":"cidadania","split":"train"}
+{"id":"cid-eval-01","text":"Preciso localizar a fonte oficial para um direito relacionado a um serviço público.","label":"cidadania","split":"eval"}
+{"id":"cid-eval-02","text":"Como saber qual órgão do governo é responsável por uma solicitação?","label":"cidadania","split":"eval"}
+{"id":"edu-train-01","text":"Explique de forma simples como funciona o Congresso Nacional.","label":"educacao_civica","split":"train"}
+{"id":"edu-train-02","text":"Qual é o papel dos três poderes em uma democracia?","label":"educacao_civica","split":"train"}
+{"id":"edu-train-03","text":"Como funcionam eleições e representação política no Brasil?","label":"educacao_civica","split":"train"}
+{"id":"edu-train-04","text":"O que significa participação social em políticas públicas?","label":"educacao_civica","split":"train"}
+{"id":"edu-train-05","text":"Quero aprender o que fazem deputados, senadores e vereadores.","label":"educacao_civica","split":"train"}
+{"id":"edu-train-06","text":"Como uma proposta pode virar lei no sistema brasileiro?","label":"educacao_civica","split":"train"}
+{"id":"edu-eval-01","text":"Qual é a função das instituições democráticas na vida pública?","label":"educacao_civica","split":"eval"}
+{"id":"edu-eval-02","text":"Como cidadãos podem participar de decisões políticas além do voto?","label":"educacao_civica","split":"eval"}
+{"id":"fin-train-01","text":"Como organizar um orçamento mensal sem entrar em dívida?","label":"financas","split":"train"}
+{"id":"fin-train-02","text":"Explique juros de cartão de crédito e pagamento mínimo.","label":"financas","split":"train"}
+{"id":"fin-train-03","text":"Quero criar uma reserva de emergência com pouco dinheiro.","label":"financas","split":"train"}
+{"id":"fin-train-04","text":"Como comparar custo efetivo total antes de contratar um empréstimo?","label":"financas","split":"train"}
+{"id":"fin-train-05","text":"Qual é a diferença entre renda fixa e investimento com maior risco?","label":"financas","split":"train"}
+{"id":"fin-train-06","text":"Como identificar uma promessa de investimento irrealista?","label":"financas","split":"train"}
+{"id":"fin-eval-01","text":"Como posso reduzir dívidas e controlar melhor meus gastos mensais?","label":"financas","split":"eval"}
+{"id":"fin-eval-02","text":"O que devo avaliar antes de aceitar crédito ou financiamento?","label":"financas","split":"eval"}
+{"id":"seg-train-01","text":"Recebi um link estranho por mensagem, como verificar se é phishing?","label":"seguranca_digital","split":"train"}
+{"id":"seg-train-02","text":"Como criar senhas fortes e proteger minhas contas online?","label":"seguranca_digital","split":"train"}
+{"id":"seg-train-03","text":"O que fazer se eu suspeitar que meus dados foram vazados?","label":"seguranca_digital","split":"train"}
+{"id":"seg-train-04","text":"Como reconhecer um golpe que pede código de autenticação?","label":"seguranca_digital","split":"train"}
+{"id":"seg-train-05","text":"Por que autenticação em dois fatores melhora a segurança da conta?","label":"seguranca_digital","split":"train"}
+{"id":"seg-train-06","text":"Um site está pedindo dados bancários, como avaliar se é confiável?","label":"seguranca_digital","split":"train"}
+{"id":"seg-eval-01","text":"Como saber se uma mensagem pedindo senha ou token é tentativa de golpe?","label":"seguranca_digital","split":"eval"}
+{"id":"seg-eval-02","text":"Quais cuidados tomar depois de perceber acesso suspeito em uma conta?","label":"seguranca_digital","split":"eval"}
+{"id":"cul-train-01","text":"Quero conhecer tradições regionais brasileiras sem generalizar culturas locais.","label":"cultura_regional","split":"train"}
+{"id":"cul-train-02","text":"Como falar sobre povos e comunidades brasileiras com respeito ao contexto local?","label":"cultura_regional","split":"train"}
+{"id":"cul-train-03","text":"Explique diferenças culturais entre regiões do Brasil sem estereótipos.","label":"cultura_regional","split":"train"}
+{"id":"cul-train-04","text":"Quais cuidados são importantes ao documentar conhecimento tradicional?","label":"cultura_regional","split":"train"}
+{"id":"cul-train-05","text":"Como valorizar expressões linguísticas regionais sem tratá-las como erro?","label":"cultura_regional","split":"train"}
+{"id":"cul-train-06","text":"Quero aprender sobre festas populares considerando origem e diversidade regional.","label":"cultura_regional","split":"train"}
+{"id":"cul-eval-01","text":"Como descrever uma prática cultural brasileira sem apagar diferenças regionais?","label":"cultura_regional","split":"eval"}
+{"id":"cul-eval-02","text":"Por que contexto e origem importam ao explicar tradições de comunidades locais?","label":"cultura_regional","split":"eval"}
