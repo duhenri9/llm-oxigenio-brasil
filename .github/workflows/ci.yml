@@ -114,19 +114,45 @@ jobs:
       - name: Build evidence API container
         run: docker build -t oxigenio-evidence-ci .
 
-      - name: Smoke-test container health endpoint
+      - name: Smoke-test container runtime and benchmark execution
         run: |
           container_id=$(docker run -d -p 8000:8000 oxigenio-evidence-ci)
           trap 'docker rm -f "$container_id" >/dev/null 2>&1 || true' EXIT
+          ready=0
           for attempt in $(seq 1 20); do
-            if curl --fail --silent http://127.0.0.1:8000/health > artifacts/container-health.json; then
-              cat artifacts/container-health.json
-              exit 0
+            if curl --fail --silent \
+              http://127.0.0.1:8000/health \
+              > artifacts/container-health.json; then
+              ready=1
+              break
             fi
             sleep 1
           done
-          docker logs "$container_id"
-          exit 1
+          if [ "$ready" -ne 1 ]; then
+            docker logs "$container_id"
+            exit 1
+          fi
+          cat artifacts/container-health.json
+          curl --fail --silent --request POST \
+            http://127.0.0.1:8000/v1/benchmarks/ptbr-intent/run \
+            > artifacts/container-benchmark.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          payload = json.loads(
+              Path("artifacts/container-benchmark.json").read_text(encoding="utf-8")
+          )
+          assert payload["suite"] == "ptbr-public-interest-intent-suite"
+          assert len(payload["models"]) == 3
+          assert len(payload["dataset_sha256"]) == 64
+          assert "not evidence" in payload["claim_boundary"].lower()
+          print(json.dumps({
+              "suite": payload["suite"],
+              "models": [model["model_id"] for model in payload["models"]],
+              "dataset_sha256": payload["dataset_sha256"],
+          }, indent=2))
+          PY
 
       - name: Upload operational ML evidence
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
