@@ -12,7 +12,7 @@ import json
 from collections.abc import Iterable, Mapping
 from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 from datasets import load_dataset
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -320,8 +320,8 @@ def load_pinned_dataset() -> tuple[list[Mapping[str, Any]], list[Mapping[str, An
     missing = [split for split in EXPECTED_SPLITS if split not in dataset]
     if missing:
         raise ValueError(f"pinned dataset revision is missing required splits: {missing}")
-    train = [dict(row) for row in dataset["train"]]
-    test = [dict(row) for row in dataset["test"]]
+    train = [cast(Mapping[str, Any], dict(row)) for row in dataset["train"]]
+    test = [cast(Mapping[str, Any], dict(row)) for row in dataset["test"]]
     return train, test
 
 
