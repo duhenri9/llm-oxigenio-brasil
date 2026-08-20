@@ -17,7 +17,12 @@ from typing import Any
 from datasets import load_dataset
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, confusion_matrix, f1_score, precision_recall_fscore_support
+from sklearn.metrics import (
+    accuracy_score,
+    confusion_matrix,
+    f1_score,
+    precision_recall_fscore_support,
+)
 from sklearn.pipeline import Pipeline
 
 BENCHMARK_NAME = "olid-br-offensive-language"
@@ -186,7 +191,9 @@ def build_manifest(train: list[Example], test: list[Example]) -> DatasetManifest
     test_labels = tuple(sorted({example.label for example in test}))
     expected = tuple(sorted(EXPECTED_LABELS))
     if train_labels != expected or test_labels != expected:
-        raise ValueError("official train/test splits must both contain the expected binary label set")
+        raise ValueError(
+            "official train/test splits must both contain the expected binary label set"
+        )
 
     train_digest = _split_digest(train)
     test_digest = _split_digest(test)
