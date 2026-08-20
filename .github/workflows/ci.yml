@@ -9,6 +9,10 @@ on:
 permissions:
   contents: read
 
+env:
+  HF_HUB_DISABLE_TELEMETRY: "1"
+  DO_NOT_TRACK: "1"
+
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -65,6 +69,48 @@ jobs:
               "macro_f1": payload["macro_f1"],
               "dataset_sha256": payload["dataset_sha256"],
           }, indent=2))
+          PY
+
+      - name: Execute pinned OLID-BR external benchmark
+        run: |
+          oxigen-olidbr --out-dir artifacts/olidbr-v1
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          from datasets import load_dataset
+
+          root = Path("artifacts/olidbr-v1")
+          manifest = json.loads((root / "dataset-manifest.json").read_text(encoding="utf-8"))
+          metrics = json.loads((root / "metrics.json").read_text(encoding="utf-8"))
+          digests = json.loads((root / "evidence-digests.json").read_text(encoding="utf-8"))
+
+          expected_revision = "84b0d7dd4309be677a47c535632a9398ff1897bd"
+          assert manifest["dataset_id"] == "dougtrajano/olid-br"
+          assert manifest["revision"] == expected_revision
+          assert manifest["licence"] == "CC BY 4.0"
+          assert manifest["raw_text_persisted"] is False
+          assert manifest["duplicate_ids"] == 0
+          assert manifest["cross_split_text_duplicates"] == 0
+          assert manifest["train_examples"] > 0
+          assert manifest["test_examples"] > 0
+          assert len(manifest["dataset_sha256"]) == 64
+          assert metrics["benchmark"] == "olid-br-offensive-language"
+          assert metrics["benchmark_version"] == "1.0.0"
+          assert 0.0 <= metrics["accuracy"] <= 1.0
+          assert 0.0 <= metrics["macro_f1"] <= 1.0
+          assert len(digests["pack_sha256"]) == 64
+
+          # External privacy control: source text may be processed in memory but must
+          # not be persisted in any evidence file produced by this gate.
+          source = load_dataset("dougtrajano/olid-br", revision=expected_revision)
+          sampled_texts = [str(source["train"][index]["text"]) for index in range(min(3, len(source["train"])))]
+          persisted = "\n".join(
+              path.read_text(encoding="utf-8")
+              for path in sorted(root.iterdir())
+              if path.is_file()
+          )
+          assert all(text not in persisted for text in sampled_texts)
           PY
 
       - name: Generate operational evidence pack
