@@ -4,7 +4,7 @@
 
 Oxigênio Brasil is an open-source research initiative focused on Brazilian Portuguese, data governance, model evaluation and responsible adaptation. The project does **not** claim to have trained a Brazilian foundation model yet. Its current public standard is narrower: make assumptions, datasets, evaluation paths and limitations inspectable before larger model claims are made.
 
-> **Current executable milestone:** the repository ships a deterministic PT-BR ML evaluation slice with a versioned synthetic dataset, frozen train/eval splits, three reproducible baselines, machine-readable evidence, drift controls, a small FastAPI surface, a container image and CI gates that execute the complete operational path.
+> **Current executable milestone:** the repository ships a deterministic PT-BR ML evaluation stack with a versioned synthetic regression suite plus a separately gated, independently sourced OLID-BR benchmark pinned to an explicit dataset revision and licence. CI also exercises machine-readable evidence, drift controls, a small FastAPI surface and a containerised runtime.
 
 ## Em português
 
@@ -52,6 +52,22 @@ Detalhes:
 - [`docs/ptbr_public_interest_benchmark.md`](docs/ptbr_public_interest_benchmark.md)
 - [`docs/operational-evidence.md`](docs/operational-evidence.md)
 
+## Benchmark externo versionado — OLID-BR
+
+O primeiro gate independente usa **OLID-BR**, um dataset de identificação de linguagem ofensiva em português brasileiro. A integração fixa uma revisão exata da fonte, registra explicitamente a licença **CC BY 4.0**, preserva os splits oficiais `train`/`test` e falha em caso de IDs duplicados ou sobreposição exata de texto entre os splits.
+
+```bash
+oxigen-olidbr --out-dir artifacts/olidbr-v1
+```
+
+O baseline é deliberadamente simples: word TF-IDF + logistic regression. O evidence pack registra provenance, revisão, licença, SHA-256 dos splits, métricas agregadas e evidência por exemplo usando ID e hash do texto. **O texto bruto do OLID-BR é usado apenas em memória durante a avaliação e não é persistido nos artefatos gerados pelo benchmark.**
+
+Esse resultado responde apenas à tarefa congelada de linguagem ofensiva do OLID-BR. Ele não sustenta claims de cobertura cultural ampla, fairness, segurança, factualidade, representatividade nacional ou qualidade geral de um modelo em português brasileiro.
+
+Detalhes:
+
+- [`docs/olid_br_external_benchmark.md`](docs/olid_br_external_benchmark.md)
+
 ## Drift com negative control
 
 O monitor de drift tem semântica explícita `PASS | DRIFT | INDETERMINATE` e compara distribuição de labels, tamanho médio em caracteres e contagem média de tokens.
@@ -91,6 +107,7 @@ Documentos principais:
 - [`docs/roadmap.md`](docs/roadmap.md)
 - [`docs/brazilian_domain_strategy.md`](docs/brazilian_domain_strategy.md)
 - [`docs/ptbr_public_interest_benchmark.md`](docs/ptbr_public_interest_benchmark.md)
+- [`docs/olid_br_external_benchmark.md`](docs/olid_br_external_benchmark.md)
 - [`docs/operational-evidence.md`](docs/operational-evidence.md)
 - [`docs/references/maritaca_sabia_landscape.md`](docs/references/maritaca_sabia_landscape.md)
 - [`HANDOFF.md`](HANDOFF.md)
@@ -106,9 +123,11 @@ Landing page pública:
 - pacote Python instalável em modo de desenvolvimento;
 - testes unitários, Ruff e MyPy em CI;
 - benchmark determinístico de classificação de texto PT-BR;
-- três baselines comparáveis sobre split congelado;
+- três baselines comparáveis sobre split sintético congelado;
 - dataset sintético versionado com manifesto de provenance e limites de uso;
-- evidence pack com experiment record, métricas, eval card, HTML report e digests;
+- benchmark externo OLID-BR com fonte/revisão/licença explícitas e splits oficiais preservados;
+- evidence pack externo sem persistência do texto bruto da fonte;
+- evidence pack sintético com experiment record, métricas, eval card, HTML report e digests;
 - monitor de drift com positive e negative controls;
 - API FastAPI pequena e documentada;
 - imagem Docker construída e smoke-tested em CI;
@@ -120,11 +139,10 @@ Landing page pública:
 - dataset nacional final;
 - pesos de modelo publicados;
 - corpus de treinamento consolidado;
-- benchmark oficial representativo do Brasil real;
-- benchmark externo promovido sem revisão explícita de licença/proveniência;
+- benchmark oficial representativo do Brasil real ou de múltiplos domínios brasileiros;
 - deploy público durável com SLA;
 - GPU ou infraestrutura de treinamento comprometida;
-- claim de segurança, factualidade ou cobertura cultural ampla.
+- claim de segurança, factualidade, fairness ou cobertura cultural ampla.
 
 ## Princípios
 
@@ -188,6 +206,7 @@ python -m ruff format --check src tests
 python -m mypy src
 oxigen-benchmark
 oxigen-evidence --out-dir artifacts/ptbr-suite
+oxigen-olidbr --out-dir artifacts/olidbr-v1
 ```
 
 ## Modelo base
