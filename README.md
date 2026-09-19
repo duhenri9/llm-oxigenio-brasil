@@ -6,6 +6,24 @@ Oxigênio Brasil is an open-source research initiative focused on Brazilian Port
 
 > **Current executable milestone:** the repository ships a deterministic PT-BR ML evaluation stack with a versioned synthetic regression suite plus a separately gated, independently sourced OLID-BR benchmark pinned to an explicit dataset revision and licence. CI also exercises machine-readable evidence, drift controls, a small FastAPI surface and a containerised runtime.
 
+
+## 60–90 second review
+
+**Problem:** PT-BR model work is easy to overclaim when datasets, revisions, licences, baselines and limitations are not reproducible.
+
+**What this demonstrates:** a Python ML/evaluation stack that treats provenance and evidence as first-class outputs: deterministic synthetic regression, a separately gated external OLID-BR benchmark, drift controls, machine-readable evidence, FastAPI packaging and Docker smoke tests.
+
+**Try the core locally:** Python 3.11+ is enough for the synthetic evidence path; no hosted model or production credential is required.
+
+~~~bash
+python -m pip install -e ".[dev]"
+oxigen-evidence --out-dir artifacts/ptbr-suite
+~~~
+
+**Engineering path:** review the generated evidence pack, then [operational evidence](docs/operational-evidence.md), the [external benchmark contract](docs/olid_br_external_benchmark.md), data-governance policies and CI.
+
+**Evidence boundary:** benchmark execution and container smoke tests are demonstrable; they do not claim a trained Brazilian foundation model, broad cultural coverage or a production service.
+
 ## Em português
 
 O **Oxigênio Brasil** é uma iniciativa open-source, Portuguese-first, para construir uma fundação auditável de pesquisa, avaliação e adaptação de modelos de linguagem ao contexto brasileiro.
